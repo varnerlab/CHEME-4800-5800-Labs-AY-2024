@@ -10,3 +10,7 @@ Engineering practice increasingly relies on computational tools and data analysi
 ### Week 1: Getting started with the CHEME 4800/5800 Toolchain
 * [Lab 1b: Installation of the Course Toolchain (Anaconda, VSCode, Julia, GitHub, etc.)](./week-1/Lab-1b/README.md)
 * [Lab 1d: Working with the Command Line Interfaces (CLIs), and the Julia, Python Interactive REPLs](./week-1/Lab-1d/README.md)
+
+### Week 2: Introduction to Program Structure, Testing and Debugging
+* [Lab 2b: Introduction to Program Structure, Testing and Debugging](./week-2/Lab-2b/README.md)
+* [Lab 2d: Introduction to Extrnal Modules and Package Managers](./week-2/Lab-2d/README.md)
