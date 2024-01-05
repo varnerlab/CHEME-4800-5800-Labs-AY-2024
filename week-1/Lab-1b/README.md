@@ -8,8 +8,10 @@ This lab will walk you through the installation of the CHEME 4800/5800 toolchain
 * [Visual Studio Code](https://code.visualstudio.com) - a code editor that supports a wide variety of programming languages and file formats. We'll use VSCode to write and edit code in the course.
 * [Anaconda](https://www.anaconda.com/products/individual) - a Python distribution that includes the [Jupyter Notebook](https://jupyter.org) and [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) interactive development notebook environments.
 
-## Installing Julia
+### Installing Julia
 This course uses the [Julia](https://julialang.org) programming language. You can find the installation instructions for Julia [here](https://julialang.org/downloads/). 
+* On `Windows`, please make sure to check the `Add Julia to Path` checkbox during the installation process. This will allow you to run Julia from the command line.
+* On `MacOS`, please make sure follow to the instructions to add Julia to your path found [here](https://julialang.org/downloads/platform/#macos). This will allow you to run Julia from the command line.
 
 ## Installing GitHub Desktop
 This course uses [GitHub](https://github.com) to manage the code that we write. You can find the installation instructions for GitHub Desktop [here](https://desktop.github.com). 
@@ -20,4 +22,4 @@ This course uses [Visual Studio Code](https://code.visualstudio.com) as a code e
 * In addition, you'll need to install the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) for Visual Studio Code. You can find the installation instructions for the Python extension [here](https://code.visualstudio.com/docs/languages/python).
 
 ## Installing Anaconda
-This course uses [Anaconda](https://www.anaconda.com/products/individual) as a Python distribution. You can find the installation instructions for Anaconda [here](https://docs.anaconda.com/anaconda/install/). If you do NOT already have a python installation on your machine, we recommmed that you install [Anaconda](https://www.anaconda.com/products/individual) on your machine.  This will install a python distribution on your machine that includes [Jupyter](https://jupyter.org).  Once you have installed [Anaconda](https://www.anaconda.com/products/individual), you can install the [IJulia](https://github.com/JuliaLang/IJulia.jl) package, which will allow you to use [Jupyter](https://jupyter.org) with [Julia](https://julialang.org). 
+This course uses [Anaconda](https://www.anaconda.com/products/individual) as a Python distribution. You can find the installation instructions for Anaconda [here](https://docs.anaconda.com/anaconda/install/). If you do NOT already have a python installation on your machine, we recommmed that you install [Anaconda](https://www.anaconda.com/products/individual) on your machine.  Once you have installed [Anaconda](https://www.anaconda.com/products/individual), you can install the [IJulia](https://github.com/JuliaLang/IJulia.jl) package, which will allow you to use [Jupyter](https://jupyter.org) with [Julia](https://julialang.org). 
