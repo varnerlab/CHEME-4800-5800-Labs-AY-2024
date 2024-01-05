@@ -8,6 +8,8 @@ This lab will walk you through the CHEME 4800/5800 toolchain installation. This 
 * [Visual Studio Code](https://code.visualstudio.com) - a code editor that supports various programming languages and file formats. We'll use VSCode to write and edit code in the course.
 * [Anaconda](https://www.anaconda.com/products/individual) - a Python distribution that includes the [Jupyter Notebook](https://jupyter.org) and [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) interactive development notebook environments.
 
+After installing these tools, we'll test our installation by running a simple Julia program, a classic ["Hello World"](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) program.
+
 ## Prerequisites
 To complete this lab, you will need to have the following software installed on your machine:
 
