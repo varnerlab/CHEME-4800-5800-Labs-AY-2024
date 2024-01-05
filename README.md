@@ -6,5 +6,7 @@ Engineering practice increasingly relies on computational tools and data analysi
 
 * CHEME 4800 will co-meet with CHEME 5800. Students in CHEME 4800 will attend the same lectures and lab sections and complete the same problem sets as CHEME 5800. However, students in CHEME 5800 will have a significantly more in-depth team project. 
 
-### Lab topics
+## Lab topics
+### Week 1: Getting started with the CHEME 4800/5800 Toolchain
 * [Lab 1b: Installation of the Course Toolchain (Anaconda, VSCode, Julia, GitHub, etc.)](./week-1/Lab-1b/README.md)
+* [Lab 1d: Working with the Command Line Interfaces (CLIs), and the Julia, Python Interactive REPLs](./week-1/Lab-1d/README.md)
