@@ -13,4 +13,4 @@ Engineering practice increasingly relies on computational tools and data analysi
 
 ### Week 2: Introduction to Program Structure, Testing and Debugging
 * [Lab 2b: Introduction to Program Structure, Testing and Debugging](./week-2/Lab-2b/README.md)
-* [Lab 2d: Introduction to Extrnal Modules and Package Managers](./week-2/Lab-2d/README.md)
+* [Lab 2d: Introduction to Importing Extrnal Modules and using Package Managers in Julia and Python](./week-2/Lab-2d/README.md)
