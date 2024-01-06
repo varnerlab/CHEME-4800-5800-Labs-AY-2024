@@ -17,4 +17,4 @@ Engineering practice increasingly relies on computational tools and data analysi
 
 ### Week 3: Introduction to Control Flow, Collections and Iteration
 * [Lab 3b: Introduction to Conditional Statements and Control flow in Julia, Python, and C/C++](./week-3/Lab-3b/README.md)
-* [Lab 3d: Introduction to Searching, Sorting and Parsing Operations using for and while loops](./week-3/Lab-3d/README.md)
+* [Lab 3d: Introduction to Searching, Sorting, and Parsing Operations using for and while loops](./week-3/Lab-3d/README.md)
