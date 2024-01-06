@@ -13,8 +13,8 @@ Engineering practice increasingly relies on computational tools and data analysi
 
 ### Week 2: Introduction to Program Structure, Testing and Debugging
 * [Lab 2b: Introduction to Program Structure, Testing and Debugging](./week-2/Lab-2b/README.md)
-* [Lab 2d: Introduction to Importing Extrnal Modules and using Package Managers in Julia and Python](./week-2/Lab-2d/README.md)
+* [Lab 2d: Introduction to Importing External Modules and Using Package Managers in Julia and Python](./week-2/Lab-2d/README.md)
 
 ### Week 3: Introduction to Control Flow, Collections and Iteration
-* [Lab 3b: Introduction to Conditional Statements and Control flow in Julia, Python and C/C++](./week-3/Lab-3b/README.md)
-* [Lab 3d: Searching and sorting operations using for and while loops in Julia, Python and C/C++](./week-3/Lab-3d/README.md)
+* [Lab 3b: Introduction to Conditional Statements and Control flow in Julia, Python, and C/C++](./week-3/Lab-3b/README.md)
+* [Lab 3d: Introduction to Searching, Sorting and Parsing Operations using for and while loops](./week-3/Lab-3d/README.md)
