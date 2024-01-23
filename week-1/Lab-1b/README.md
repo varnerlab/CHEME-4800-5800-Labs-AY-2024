@@ -10,7 +10,7 @@ This lab will walk you through the CHEME 4800/5800 toolchain installation. This 
 
 After installing these tools, we'll test our installation by running a simple Julia program, a classic ["Hello World"](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) program.
 
-## Prerequisites
+## Installation
 To complete this lab, you will need to have the following software installed on your machine:
 
 ### Installing Julia
