@@ -18,13 +18,28 @@ This course uses the [Julia](https://julialang.org) programming language. You ca
 * On `Windows`, please check the `Add Julia to Path` checkbox during installation. This will allow you to run Julia from the command line.
 * On `MacOS`, please follow the instructions to add Julia to your path found [here](https://julialang.org/downloads/platform/#macos). This will allow you to run Julia from the command line.
 
-### Installing GitHub Desktop
-This course uses [GitHub](https://github.com) to manage our code. You can find the installation instructions for GitHub Desktop [here](https://desktop.github.com). 
+### Installing Anaconda
+This course uses [Anaconda](https://www.anaconda.com/products/individual) as a Python distribution. You can find the installation instructions for Anaconda [here](https://docs.anaconda.com/anaconda/install/). If you still need a Python installation on your machine, we recommend installing [Anaconda](https://www.anaconda.com/products/individual) on your machine.  
 
 ### Installing Visual Studio Code
 This course uses [Visual Studio Code](https://code.visualstudio.com) as a code editor. You can find the installation instructions for Visual Studio Code [here](https://code.visualstudio.com/download). 
 * Once you install Visual Studio Code, you must install the [Julia extension](https://www.julia-vscode.org) for Visual Studio Code. You can find the installation instructions for the Julia extension [here](https://www.julia-vscode.org/docs/stable/gettingstarted/).
 * you'll also need to install the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) for Visual Studio Code. You can find the installation instructions for the Python extension [here](https://code.visualstudio.com/docs/languages/python).
+* Once you have installed [Anaconda](https://www.anaconda.com/products/individual), you can install the [IJulia](https://github.com/JuliaLang/IJulia.jl) package, which will allow you to use [Jupyter](https://jupyter.org) with [Julia](https://julialang.org). To do this, open the `Julia REPL` (which you can open by typing `julia` in the terminal window in VSCode) and type the following commands:
 
-### Installing Anaconda
-This course uses [Anaconda](https://www.anaconda.com/products/individual) as a Python distribution. You can find the installation instructions for Anaconda [here](https://docs.anaconda.com/anaconda/install/). If you still need a Python installation on your machine, we recommend installing [Anaconda](https://www.anaconda.com/products/individual) on your machine.  Once you have installed [Anaconda](https://www.anaconda.com/products/individual), you can install the [IJulia](https://github.com/JuliaLang/IJulia.jl) package, which will allow you to use [Jupyter](https://jupyter.org) with [Julia](https://julialang.org). 
+```julia
+using Pkg
+Pkg.add("IJulia")
+```
+
+### Installing GitHub Desktop
+This course uses [GitHub](https://github.com) to manage our code. You can find the installation instructions for GitHub Desktop [here](https://desktop.github.com). 
+* Once you intall Github desktop, you can download the labs for the course by clicking on the `Code` button on the [lab GitHub repository](https://github.com/varnerlab/CHEME-4800-5800-Labs-AY-2024.git), and then clicking on the `Open with GitHub Desktop` button. This will open GitHub Desktop and allow you to download the labs for the course.
+* Alternatively, you can copy the URL for the lab, and paste it into URL tab accesible from `Add > Clone a repository` drop down box in GitHub Desktop. This will allow you to download the labs for the into a local directory on your machine.
+
+## Testing your installation
+Once you have installed the software listed above, you can test your installation by running the following commands in the `Julia REPL` (which you can open by typing `julia --project=.` command from the `week-1/Lab-1b` directory in the terminal window in VSCode):
+
+```julia
+include(joinpath("test","runtests.jl"));
+```
