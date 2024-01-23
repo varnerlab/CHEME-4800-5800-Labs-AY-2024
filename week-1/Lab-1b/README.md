@@ -9,7 +9,7 @@ This lab will walk you through the CHEME 4800/5800 toolchain installation. This 
 * [Anaconda](https://www.anaconda.com/products/individual) - a Python distribution that includes the [Jupyter Notebook](https://jupyter.org) and [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) interactive development notebook environments.
 
 ### Stretch goal
-After installing these tools, our stretch goal will be to test our installation by running a simple `Julia` program, a classic ["Hello World"](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) program. However, we'll do it in the next lab if we don't get to it today.
+After installing these tools, our stretch goal will be to test our installation by running a simple ["Hello World"](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) program written in `Julia`. However, we'll do it in the next lab if we don't finish today.
 
 
 ## Installing Julia
