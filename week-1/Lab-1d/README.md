@@ -5,7 +5,7 @@ The objective of `Lab 1d` is to get familiar with the Command Line Interfaces (C
 Many technical computing tasks are best done from the command line. For example, you may want to run a program 24/7 on a remote machine or a supercomputer. In these cases, you will need to use the command line. I use it daily, and I hope it's helpful.
 
 ## `Lab 1d` Topics
-* Download this lab by cloning the repository, downloading the zip file, or opening it directly in VSCode from the [course labs repository](https://github.com/varnerlab/CHEME-4800-5800-Labs-AY-2024).
+* You can download this lab by cloning the repository, downloading the zip file, or opening it directly in VSCode from the [course labs repository](https://github.com/varnerlab/CHEME-4800-5800-Labs-AY-2024). Start `VSCode` from the `root` labs directory.
 * `VSCode` terminal window: you can start the `VSCode` terminal window by clicking on the `Terminal` menu item and then selecting `New Terminal` or using the keyboard shortcut `Ctrl+Shift+~`. This will open a terminal window at the bottom of the `VSCode` window. 
     * You type commands into the terminal window and press `Enter` to execute them. You can also use the up and down arrow keys to scroll through previous commands. You can copy and paste text into (or from) the terminal window using the standard keyboard shortcuts `Ctrl+C` and `Ctrl+V` (or `Cmd+C` and `Cmd+V` on `macOS`). 
 
@@ -27,13 +27,13 @@ Let's look at a few `utility` type `shell` commands:
 exec(open("HelloWorld.py").read())
 ```
 and press `Enter`. Let's look at the [exec function in the Python standard library](https://docs.python.org/3/library/functions.html#exec).
-* `Python` is (mainly) an interpreted language. The first time you execute a `Python` script, it _may_ generate a `.pyc` file, which contains the compiled bytecode of the `Python` source file. The `Python` virtual machine then executes this bytecode. Subsequent executions may be faster because `Python` can use the compiled bytecode (no compile step), and loading the bytecode (presumaly smaller) may be quicker. But the execution is the same.
-* We could also run the `HelloWorld.py` script from the terminal window by typing `python HelloWorld.py` and pressing `Enter`. Let's try it.
+* `Python` is (mainly) an interpreted language. The first time you execute a `Python` script, it _may_ generate a `.pyc` file, which contains the compiled bytecode of the `Python` source file. The `Python` virtual machine then executes this bytecode. Subsequent executions may be faster because `Python` can use the compiled bytecode (no compile step), and loading the bytecode (presumably smaller) may be quicker. But the execution time is the same.
+* We could also run the `HelloWorld.py` script from the terminal window by typing `python HelloWorld.py` and pressing `Enter`. I think we should try it.
 
 #### Julia
 `Julia` is a high-level, high-performance dynamic programming language for technical computing. The `Julia` (Run Evaluate Print Loop) is a command line interface for `Julia`. You can type `Julia` commands into the `Julia` REPL and press `Enter` to execute them. You can also use the up and down arrow keys to scroll through previous commands. Start the `Julia` REPL by opening a new terminal window, typing `julia`, and pressing `Enter`. You can exit the `Julia` REPL by typing `exit()` and pressing `Enter`. 
 * `Julia` is a compiled language — `Julia` compiles code on the fly (or it can also _precompile_ code if told to do so). The first time you execute a `Julia` script, it will take a little longer to run because `Julia` has to compile the code using the [Julia compiler and metaprogramming functionality](https://docs.julialang.org/en/v1/manual/metaprogramming/#Metaprogramming). Subsequent executions will be faster because `Julia` will use the compiled code.
-* The `Julia` REPL can operate in one of several modes. For example, hitting the `?` key opens `Help mode`, pressing the `]` key opens `Package mode`, and pressing the `;` key opens `Shell mode`. You can exit these modes by pressing the `Backspace` key. You can find more information about the `Julia` REPL [here](https://docs.julialang.org/en/v1/stdlib/REPL/).
+* The `Julia` REPL can operate in one of several modes. For example, hitting the `?` key opens `Help mode,` pressing the `]` key opens `Package mode,` and pushing the `;` key opens `Shell mode.` You can exit these modes by pressing the `Backspace` key. You can find more information about the `Julia` REPL [here](https://docs.julialang.org/en/v1/stdlib/REPL/).
 * To execute a `Julia` script, e.g., `HelloWorld.jl`, from the REPL, you can type the command:
 ```julia
 include("HelloWorld.jl")
