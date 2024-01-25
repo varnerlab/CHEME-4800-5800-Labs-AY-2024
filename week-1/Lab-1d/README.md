@@ -6,7 +6,9 @@ Many technical computing tasks are best done from the command line. For example,
 
 ## `Lab 1d` Topics
 * `VSCode` terminal window: you can start the `VSCode` terminal window by clicking on the `Terminal` menu item and then selecting `New Terminal` or by using the keyboard shortcut `Ctrl+Shift+~`. This will open a terminal window at the bottom of the `VSCode` window. 
-
-* You can type commands into the terminal window and press `Enter` to execute them. You can also use the up and down arrow keys to scroll through previous commands. You can also use the mouse to select text in the terminal window. You can copy and paste text into the terminal window using the standard keyboard shortcuts `Ctrl+C` and `Ctrl+V`. You can also use the mouse to copy and paste text into the terminal window. 
+    * You type commands into the terminal window and press `Enter` to execute them. You can also use the up and down arrow keys to scroll through previous commands. You can copy and paste text into (or from) the terminal window using the standard keyboard shortcuts `Ctrl+C` and `Ctrl+V` (or `Cmd+C` and `Cmd+V` on `macOS`). 
 
 * The terminal window is a `shell` of some sort, e.g., `zsh` for me. A `shell` is a command line interpreter. It listens for commands from the keyboard and executes them. The shell is the interface between you and the operating system. The shell is a program like any other program. You can run other programs from the shell.
+    * command: `cd` stands for change directory. For example, if you type `cd Desktop` and press `Enter`, you will change to the `Desktop` directory. If you type `cd ..` and press `Enter`, you will change to the parent directory of the current directory. If you type `cd ~` and press `Enter`, you will change to your home directory. 
+    * command: `pwd` prints the current directory you are in.
+    * command: 'ls' lists the files in the current directory. There are many `flags` for the `ls` command. For example, `ls -a` lists all files, including hidden files. `ls -l` lists files in long format, including permissions, ownership, size, and modification date. `ls -t` lists files by modification time. `ls -r` lists files in reverse order. You can combine flags, e.g., `ls -alt` lists all files in long format, including hidden files, sorted by modification time.
