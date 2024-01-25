@@ -5,6 +5,7 @@ The objective of `Lab 1d` is to get familiar with the Command Line Interfaces (C
 Many technical computing tasks are best done from the command line. For example, you may want to run a program 24/7 on a remote machine or a supercomputer. In these cases, you will need to use the command line. I use it daily, and I hope it's helpful.
 
 ## `Lab 1d` Topics
+* Download this lab by cloning the repository, downloading the zip file or by opening the directly in `VSCode` from the [course labs repository](https://github.com/varnerlab/CHEME-4800-5800-Labs-AY-2024).
 * `VSCode` terminal window: you can start the `VSCode` terminal window by clicking on the `Terminal` menu item and then selecting `New Terminal` or using the keyboard shortcut `Ctrl+Shift+~`. This will open a terminal window at the bottom of the `VSCode` window. 
     * You type commands into the terminal window and press `Enter` to execute them. You can also use the up and down arrow keys to scroll through previous commands. You can copy and paste text into (or from) the terminal window using the standard keyboard shortcuts `Ctrl+C` and `Ctrl+V` (or `Cmd+C` and `Cmd+V` on `macOS`). 
 
