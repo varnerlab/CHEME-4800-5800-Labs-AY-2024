@@ -31,6 +31,7 @@ and press `Enter`. Let's look at the [exec function in the Python standard libra
 
 #### Julia
 `Julia` is a high-level, high-performance dynamic programming language for technical computing. The `Julia` (Run Evaluate Print Loop) is a command line interface for `Julia`. You can type `Julia` commands into the `Julia` REPL and press `Enter` to execute them. You can also use the up and down arrow keys to scroll through previous commands. Start the `Julia` REPL by opening a new terminal window, typing `julia`, and pressing `Enter`. You can exit the `Julia` REPL by typing `exit()` and pressing `Enter`. 
+* `Julia` is a compiled language — `Julia` compiles code on the fly (or it can also _precompile_ code if told to do so). The first time you execute a `Julia` script, it will take a little longer to run because `Julia` has to compile the code using the [Julia compiler and metaprogramming functionality](https://docs.julialang.org/en/v1/manual/metaprogramming/#Metaprogramming). Subsequent executions will be faster because `Julia` will use the compiled code.
 * The `Julia` REPL can operate in one of several modes. For example, hitting the `?` key opens `Help mode`, pressing the `]` key opens `Package mode`, and pressing the `;` key opens `Shell mode`. You can exit these modes by pressing the `Backspace` key. You can find more information about the `Julia` REPL [here](https://docs.julialang.org/en/v1/stdlib/REPL/).
 * To execute a `Julia` script, e.g., `HelloWorld.jl`, from the REPL, you can type the command:
 ```julia
@@ -39,4 +40,3 @@ include("HelloWorld.jl")
 and press `Enter`. However, before we do this, let's take a quick look at the [include function in the Julia standard library](https://docs.julialang.org/en/v1/base/base/#Base.include).
 * OK, now that we understand what `include` is doing, let's execute the `HelloWorld.jl` script. 
     * `Hmmm`: What assumption did we make about the location of the `HelloWorld.jl` file? Let's brainstorm some ways to fix this problem.
-* `Julia` is a compiled language — `Julia` compiles code on the fly (or it can also _precompile_ code if told to do so). The first time you execute a `Julia` script, it will take a little longer to run because `Julia` has to compile the code using the [Julia compiler and metaprogramming functionality](https://docs.julialang.org/en/v1/manual/metaprogramming/#Metaprogramming). Subsequent executions will be faster because `Julia` will use the compiled code.
