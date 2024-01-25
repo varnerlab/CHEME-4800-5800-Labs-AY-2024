@@ -11,14 +11,14 @@ Many technical computing tasks are best done from the command line. For example,
 ### Shell commands
 The terminal window is a `shell` of some sort, e.g., `zsh` for me on macOS or perhaps `PowerShell` for Windows users. A `shell` is a command-line interpreter that listens for commands from the keyboard and executes them. The `shell` is the interface between you and the operating system. You can run different commands and programs from the `shell`. 
 
-Let's look a few `utility` type `shell` commands:
+Let's look at a few `utility` type `shell` commands:
 * command: `pwd` prints the current directory you are in. If your computer were a map, `pwd` would tell you where you are on the map.
 * command: `cd` stands for change directory. For example, if you type `cd <something>` and press `Enter`, you will change to the `<something>` directory. 
     * `Catch`: The `<something>` directory must be visible, i.e., a subdirectory of the current directory. You can use the `ls` command to list the files and directories visible from the current directory.
     * If you type `cd ..` and press `Enter`, you will change to the parent directory of the current directory. If you type `cd ~` and press `Enter`, you will switch to your home directory. 
 * command: `ls` lists the files in the current directory. There are many `flags` for the `ls` command. For example, `ls -a` lists all files, including hidden files. The command `ls -l` lists files in long format, including permissions, ownership, size, and modification date. The command `ls -t` lists files by modification time, while `ls -r` lists files in reverse order. You can combine flags, e.g., `ls -alt` lists all files in long format, including hidden files, sorted by modification time.
 
-### `Julia` and `Python` REPLs   
+### `Python` and `Julia` REPLs   
 * `Python` REPL: you can start the `Python` REPL (Run Evaluate Print Loop) by opening a new terminal window and typing `python`, and pressing `Enter.` You can exit the `Python` REPL by typing `exit()` and pressing `Enter`. To run a `Python` script, e.g., `HelloWorld.py`, from the REPL you can type the command `exec(open("HelloWorld.py").read())` and press `Enter`. Let's look at the [exec function in the Python standard library](https://docs.python.org/3/library/functions.html#exec).
     * `Python` is (mainly) an interpreted language. The first time you execute a `Python` script, it _may_ generate a `.pyc` file, which contains the compiled bytecode of the `Python` source file. The `Python` virtual machine then executes this bytecode. Subsequent executions may be faster because `Python` can use the compiled bytecode, which may be quicker to load than the source file (but the execution is the same).
     * We could also run the `HelloWorld.py` script from the terminal window by typing `python HelloWorld.py` and pressing `Enter. ' Let's try it.
