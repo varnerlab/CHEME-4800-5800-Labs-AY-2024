@@ -15,8 +15,7 @@ Let's look a few `utility` type `shell` commands:
 * command: `pwd` prints the current directory you are in. If your computer were a map, `pwd` would tell you where you are on the map.
 * command: `cd` stands for change directory. For example, if you type `cd <something>` and press `Enter`, you will change to the `<something>` directory. 
     * `Catch`: The `<something>` directory must be visible, i.e., a subdirectory of the current directory. You can use the `ls` command to list the files and directories visible from the current directory.
-
-If you type `cd ..` and press `Enter`, you will change to the parent directory of the current directory. If you type `cd ~` and press `Enter`, you will switch to your home directory. 
+    * If you type `cd ..` and press `Enter`, you will change to the parent directory of the current directory. If you type `cd ~` and press `Enter`, you will switch to your home directory. 
 * command: `ls` lists the files in the current directory. There are many `flags` for the `ls` command. For example, `ls -a` lists all files, including hidden files. The command `ls -l` lists files in long format, including permissions, ownership, size, and modification date. The command `ls -t` lists files by modification time, while `ls -r` lists files in reverse order. You can combine flags, e.g., `ls -alt` lists all files in long format, including hidden files, sorted by modification time.
 
 ### `Julia` and `Python` REPLs   
