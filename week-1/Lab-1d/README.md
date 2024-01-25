@@ -18,7 +18,7 @@ Many technical computing tasks are best done from the command line. For example,
 
 ### `Julia` and `Python` REPLs   
 * `Python` REPL: you can start the `Python` REPL (run evaluate print loop) by opening a new terminal window and typing `python` and pressing `Enter`. You can exit the `Python` REPL by typing `exit()` and pressing `Enter`. To run a `Python` script, e.g., `HelloWorld.py`, from the REPL you can type the command `exec(open("HelloWorld.py").read())` and press `Enter`. Let's take a quick look at the [exec function in the Python standard library](https://docs.python.org/3/library/functions.html#exec).
-    * `Python` is an interpreted language. The `Python` REPL interprets `Python` code on the fly. The first time you execute a `Python` script, it will take a little longer to execute because `Python` has to interpret the code. Subsequent executions will be faster because `Python` will use the interpreted code.
+    * `Python` is (mostly) an interpreted language. The first time you execute a `Python` script, it _may_ generate a `.pyc` file which contains the compiled bytecode of the `Python` source file. This bytecode is then executed by the `Python` virtual machine. Subsequent executions may be faster because `Python` can use the compiled bytecode, which may faster to load than the original source file (execution is the same).
     * We could also run the `HelloWorld.py` script from the terminal window by typing `python HelloWorld.py` and pressing `Enter`. Let's try it.
 
 * `Julia` REPL: you can start the `Julia` REPL (run evaluate print loop) by opening a new terminal window and typing `julia` and pressing `Enter`. You can exit the `Julia` REPL by typing `exit()` and pressing `Enter`. 
