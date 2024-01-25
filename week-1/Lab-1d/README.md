@@ -9,7 +9,7 @@ Many technical computing tasks are best done from the command line. For example,
     * You type commands into the terminal window and press `Enter` to execute them. You can also use the up and down arrow keys to scroll through previous commands. You can copy and paste text into (or from) the terminal window using the standard keyboard shortcuts `Ctrl+C` and `Ctrl+V` (or `Cmd+C` and `Cmd+V` on `macOS`). 
 
 ### Shell commands
-* The terminal window is a `shell` of some sort, e.g., `zsh` for me on macOS or perhaps `PowerShell` for Windows users. A `shell` is a command-line interpreter that listens for commands from the keyboard and executes them. The shell is the interface between you and the operating system. It is a program like any other program. You can run different programs from the shell.
+* The terminal window is a `shell` of some sort, e.g., `zsh` for me on macOS or perhaps `PowerShell` for Windows users. A `shell` is a command-line interpreter that listens for commands from the keyboard and executes them. The `shell` is the interface between you and the operating system. You can run different commands and programs from the `shell`. Let's look a few `utility` type `shell` commands:
     * command: `pwd` prints the current directory you are in. If your computer were a map, `pwd` would tell you where you are on the map.
     * command: `cd` stands for change directory. For example, if you type `cd <something>` and press `Enter`, you will change to the `<something>` directory. 
         * `Catch`: The `<something>` directory must be visible, i.e., a subdirectory of the current directory. You can use the `ls` command to list the files and directories visible from the current directory.
