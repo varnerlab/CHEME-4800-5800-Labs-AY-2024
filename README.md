@@ -11,8 +11,8 @@ Engineering practice increasingly relies on computational tools and data analysi
 * [Lab 1b: Installation of the Course Toolchain (Anaconda, VSCode, Julia, GitHub, etc.)](./week-1/Lab-1b/README.md)
 * [Lab 1d: Working with the Command Line Interfaces (CLIs), and the Julia, Python Interactive REPLs](./week-1/Lab-1d/README.md)
 
-### Week 2: Introduction to Program Structure, Testing and Debugging
-* [Lab 2b: Introduction to Program Structure, Testing and Debugging](./week-2/Lab-2b/README.md)
+### Week 2: Introduction to Program Structure, Functions, Testing and Debugging
+* [Lab 2b: Introduction to Functions, Scope and Error Handling](./week-2/Lab-2b/README.md)
 * [Lab 2d: Introduction to Importing External Modules and Using Package Managers in Julia and Python](./week-2/Lab-2d/README.md)
 
 ### Week 3: Introduction to Control Flow, Collections and Iteration

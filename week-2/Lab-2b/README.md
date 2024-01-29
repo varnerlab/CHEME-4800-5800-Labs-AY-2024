@@ -1,2 +1,2 @@
-# `Lab 2b`: Introduction to Program Structure, Testing and Debugging Approaches in Julia, Pythom and C/C++
+# `Lab 2b`: Introduction to Functions, Scope and Error Handling
 Fill me in
