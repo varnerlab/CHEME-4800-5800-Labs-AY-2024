@@ -44,7 +44,7 @@ _Discussion_: Let's explore some of the properties of the `x` variable, and the 
 * Why didn't we have to (initially) pass in a value for the `number_of_samples` argument in the `sample(...)` function?
 
 __Task 4__: Compute the sample mean $\hat{\mu}$ and sample standard deviation $\hat{\sigma}$ of the `x` variable using the [mean](https://docs.julialang.org/en/v1/stdlib/Statistics/#Statistics.mean) and [std](https://docs.julialang.org/en/v1/stdlib/Statistics/#Statistics.std) functions, exported from the [Statistics module](https://docs.julialang.org/en/v1/stdlib/Statistics/#Statistics).
-* `Check`: Was the sample mean $\hat{\mu}$ close to the true mean $\mu$? Was the sample standard deviation $\hat{\sigma}$ close to the true standard deviation $\sigma$?
+* `Check`: Was the sample mean $\hat{\mu}$ (and sample standard deviation $\hat{\sigma}$) close to the true mean $\mu$? and standard deviation $\sigma$?
     * If not, how can we fix this?
 * `Question`: Why didn't we download and install the `Statistics` module, e.g., using [Pkg](https://pkgdocs.julialang.org/v1/) before issuing the `using Statistics` command in the `Include.jl` file?
-    * Check out what's in the [Julia standard library](https://docs.julialang.org/en/v1/).
+    * Check out the [Julia standard library](https://docs.julialang.org/en/v1/).
