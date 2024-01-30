@@ -2,7 +2,7 @@
 In `Lab-2b`, we will introduce the concept of a `function` in Julia, see how our codes will be organized, and discuss concepts such as `scope` and `error handling.` 
 
 ## Prerequisite 
-(Duration 5 min): Break up into teams of 2-3 people and walk through all the files (starting with `Include.jl` in the `root` directory) in the `Lab-2b`. At the end of 5 min, we'll do a class Q&A to ensure everyone understands each file's purpose.
+Break up into teams of 2-3 people and take `5 min` to walk through all the files (starting with `Include.jl` in the `root` directory) in the `Lab-2b`. At the end of `5 min`, we'll do a class Q&A to ensure everyone understands each file's purpose.
 
 ## Tasks
 __Task 1__: Open a new terminal window in `VSCode`, and start the `Julia REPL` from the `root` directory of the `Lab-2b` using the `julia --project=.` command. At the `julia>` prompt, include the `Include.jl` file using the `include(...)` function: 
