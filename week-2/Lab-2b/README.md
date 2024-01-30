@@ -47,4 +47,4 @@ __Task 4__: Compute the sample mean $\hat{\mu}$ and sample standard deviation $\
 * `Check`: Was the sample mean $\hat{\mu}$ close to the true mean $\mu$? Was the sample standard deviation $\hat{\sigma}$ close to the true standard deviation $\sigma$?
     * If not, how can we fix this?
 * `Question`: Why didn't we download and install the `Statistics` module, e.g., using [Pkg](https://pkgdocs.julialang.org/v1/) before issuing the `using Statistics` command in the `Include.jl` file?
-    * Check out what's in the [Julia standard library](https://docs.julialang.org/en/v1/stdlib/).
+    * Check out what's in the [Julia standard library](https://docs.julialang.org/en/v1/).
