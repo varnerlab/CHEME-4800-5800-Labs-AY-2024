@@ -4,6 +4,7 @@ const _PATH_TO_SRC = joinpath(_ROOT, "src");
 
 # load external packages -
 using Distributions
+using UnicodePlots
 using Statistics
 
 # load my codes -
