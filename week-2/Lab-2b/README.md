@@ -18,18 +18,23 @@ __Task 2__: Create an instance of a `Normal` distribution with `μ = 0.20` and `
 * `Check`: What is the type of `d`? Use the [typeof function](https://docs.julialang.org/en/v1/base/base/#Core.typeof) to check the type of `d`.
 * `Error case`: What happens if you try to create an instance of a `Normal` distribution with `μ = 0.20` and `σ = -0.40`? Try it and see what happens.
 
-__Task 3__: Generate `n = 100` samples from the `Normal` distribution `d` by issuing the command:
+__Task 3__: Generate `number_of_samples = 100` samples from the `Normal` distribution `d` by issuing the command:
     
 ```julia
 x = sample(d);
 ```
 
+* `Check`: What is the type of `x`? Use the [typeof function](https://docs.julialang.org/en/v1/base/base/#Core.typeof) to check the type of `x.`
+* `Error case`: What happens if we pass in a negative value for `number_of_samples`? Try it and see what happens.
+* `Error case`: What happens if we pass in a non-integer value for `number_of_samples`? Try it and see what happens.
+* `Error case`: What happens if we pass in a non-numeric value for `number_of_samples`? Try it and see what happens.
+
 _Discussion_: Let's explore some of the properties of the `x` variable, and the `sample(...)` function:
-* What is the type of `x`? Use the [typeof function](https://docs.julialang.org/en/v1/base/base/#Core.typeof) to check the type of `x.` 
-* How big (number of elements) is `x`? Use the [length function](https://docs.julialang.org/en/v1/base/strings/#Base.length-Tuple{AbstractString}) to check its size. 
-* How much memory (in bytes) does `x` occupy? Use the `sizeof(...)` function to check its memory footprint. Do you think this makes sense?
+* How `big` (number of elements) is `x`? Use the [length function](https://docs.julialang.org/en/v1/base/strings/#Base.length-Tuple{AbstractString}) to check its size. 
+* How `big` (how much memory in bytes) does `x` occupy? Use the [sizeof function](https://docs.julialang.org/en/v1/base/base/#Base.sizeof-Tuple{Type}) to check its memory footprint. Do you think this makes sense?
     * Let's get a second opinion; use the [varinfo function](https://docs.julialang.org/en/v1/stdlib/InteractiveUtils/#InteractiveUtils.varinfo) to summarize the variables in the current `scope`.
-* Why didn't we have to pass in the value for the number of samples `n` to the `sample(...)` function?
+* Why didn't we have to (initially) pass in a value for the `number_of_samples` arguement in the `sample(...)` function?
 
 __Task 4__: Compute the sample mean $\hat{\mu}$ and sample standard deviation $\hat{\sigma}$ of the `x` variable using the [mean](https://docs.julialang.org/en/v1/stdlib/Statistics/#Statistics.mean) and [std](https://docs.julialang.org/en/v1/stdlib/Statistics/#Statistics.std) functions, exported from the [Statistics module](https://docs.julialang.org/en/v1/stdlib/Statistics/#Statistics).
 * `Check`: Was the sample mean $\hat{\mu}$ close to the true mean $\mu$? Was the sample standard deviation $\hat{\sigma}$ close to the true standard deviation $\sigma$? How can we fix this?
+* `Question`: Why didn't we download the `Statistics` module, e.g., using [Pkg](https://pkgdocs.julialang.org/v1/) before issuing the `using Statistics` command in the `Include.jl` file?
