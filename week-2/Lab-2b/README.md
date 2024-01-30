@@ -2,7 +2,7 @@
 In `Lab-2b`, we will introduce the concept of a `function` in Julia, see how our codes will be organized, and discuss concepts such as `scope` and `error handling.` 
 
 ## Prerequisite 
-Break up into teams of 2-3 people and take `5 min` to walk through all the files (starting with `Include.jl` in the `root` directory) in the `Lab-2b`. At the end of `5 min`, we'll do a class Q&A to ensure everyone understands each file's purpose.
+Break up into teams of 2-3 people and take `5 min` to walk through all the files (starting with `Include.jl` in the `root` directory) in `Lab-2b`. At the end of `5 min`, we'll do a class Q&A to ensure everyone understands the purpose of each file.
 
 ## Tasks
 __Task 1__: Open a new terminal window in `VSCode`, and start the `Julia REPL` from the `root` directory of the `Lab-2b` using the `julia --project=.` command. At the `julia>` prompt, include the `Include.jl` file using the `include(...)` function: 
@@ -31,17 +31,17 @@ x = sample(d);
 ```
 
 * `Fun`: Visualize the samples `x` using the [histogram function](https://docs.julialang.org/en/v1/stdlib/Statistics/#Statistics.histogram) from the [UnicodePlots package](https://github.com/JuliaPlots/UnicodePlots.jl.git) (old school text plotting). 
-    * Change the number of samples in the sample function, and the number of bins in the histogram using the `nbins` keyword argument.
+    * Change the number of samples in the sample function and the number of bins in the histogram using the `nbins` keyword argument.
 * `Check`: What is the type of `x`? Use the [typeof function](https://docs.julialang.org/en/v1/base/base/#Core.typeof) to check the type of `x.`
-* `Error case`: What happens if we pass in a negative value for the `number_of_samples` argument? Try it and see what happens.
-* `Error case`: What happens if we pass in a non-integer value for `number_of_samples` argument? Try it and see what happens.
+* `Error case`: What happens if we pass in a negative value for the `number_of_samples` argument? Try it and see.
+* `Error case`: What happens if we pass in a non-integer value for the `number_of_samples` argument? Try it and see.
 * `Error case`: What happens if we pass in a non-numeric value for `number_of_samples`? Try it and see what happens.
 
 _Discussion_: Let's explore some of the properties of the `x` variable, and the `sample(...)` function:
 * How `big` (number of elements) is `x`? Use the [length function](https://docs.julialang.org/en/v1/base/strings/#Base.length-Tuple{AbstractString}) to check its size. 
 * How `big` (how much memory in bytes) does `x` occupy? Use the [sizeof function](https://docs.julialang.org/en/v1/base/base/#Base.sizeof-Tuple{Type}) to check its memory footprint. Do you think this makes sense?
     * Let's get a second opinion; use the [varinfo function](https://docs.julialang.org/en/v1/stdlib/InteractiveUtils/#InteractiveUtils.varinfo) to summarize the variables in the current `scope`.
-* Why didn't we have to (initially) pass in a value for the `number_of_samples` arguement in the `sample(...)` function?
+* Why didn't we have to (initially) pass in a value for the `number_of_samples` argument in the `sample(...)` function?
 
 __Task 4__: Compute the sample mean $\hat{\mu}$ and sample standard deviation $\hat{\sigma}$ of the `x` variable using the [mean](https://docs.julialang.org/en/v1/stdlib/Statistics/#Statistics.mean) and [std](https://docs.julialang.org/en/v1/stdlib/Statistics/#Statistics.std) functions, exported from the [Statistics module](https://docs.julialang.org/en/v1/stdlib/Statistics/#Statistics).
 * `Check`: Was the sample mean $\hat{\mu}$ close to the true mean $\mu$? Was the sample standard deviation $\hat{\sigma}$ close to the true standard deviation $\sigma$? How can we fix this?
