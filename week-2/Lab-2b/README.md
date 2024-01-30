@@ -24,11 +24,11 @@ __Task 3__: Generate `n = 100` samples from the `Normal` distribution `d` by iss
 x = sample(d);
 ```
 
-_Discussion_: Let's explore some of the propertoes of the `x` variable, and the `sample(...)` function:
+_Discussion_: Let's explore some of the properties of the `x` variable, and the `sample(...)` function:
 * What is the type of `x`? Use the [typeof function](https://docs.julialang.org/en/v1/base/base/#Core.typeof) to check the type of `x.` 
 * How big (number of elements) is `x`? Use the [length function](https://docs.julialang.org/en/v1/base/strings/#Base.length-Tuple{AbstractString}) to check its size. 
 * How much memory (in bytes) does `x` occupy? Use the `sizeof(...)` function to check its memory footprint. Do you think this makes sense?
-    * Let's get a second opinion; use the [varinfo function](https://docs.julialang.org/en/v1/stdlib/InteractiveUtils/#InteractiveUtils.varinfo) to summarize the variables in the current scope.
+    * Let's get a second opinion; use the [varinfo function](https://docs.julialang.org/en/v1/stdlib/InteractiveUtils/#InteractiveUtils.varinfo) to summarize the variables in the current `scope`.
 * Why didn't we have to pass in the value for the number of samples `n` to the `sample(...)` function?
 
 __Task 4__: Compute the sample mean $\hat{\mu}$ and sample standard deviation $\hat{\sigma}$ of the `x` variable using the [mean](https://docs.julialang.org/en/v1/stdlib/Statistics/#Statistics.mean) and [std](https://docs.julialang.org/en/v1/stdlib/Statistics/#Statistics.std) functions, exported from the [Statistics module](https://docs.julialang.org/en/v1/stdlib/Statistics/#Statistics).
