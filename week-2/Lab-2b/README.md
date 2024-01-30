@@ -8,7 +8,7 @@ In `Lab-2b`, we will introduce the concept of a `function` in Julia, see how our
 __Task 1__: Open a new terminal window in `VSCode`, and start the `Julia REPL` from the `root` directory of the `Lab-2b` using the `julia --project=.` command. At the `julia>` prompt, include the `Include.jl` file using the `include(...)` function: 
 
 ```julia
-julia> include("Include.jl")
+include("Include.jl");
 ```
 
 _Discussion_: You should see an error message called a `stack trace.` It gives us a lot of information about what happened, where the error occurred, and potentially how to fix it.
@@ -21,7 +21,7 @@ __Task 2__: Create an instance of a `Normal` distribution with `μ = 0.20` and `
 __Task 3__: Generate `n = 100` samples from the `Normal` distribution `d` by issuing the command:
     
 ```julia
-julia> x = sample(d)
+x = sample(d);
 ```
 
 _Discussion_: Let's explore some of the propertoes of the `x` variable, and the `sample(...)` function:
