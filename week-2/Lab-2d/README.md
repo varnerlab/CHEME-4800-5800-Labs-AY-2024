@@ -8,19 +8,24 @@ Break up into teams of 2-3 people and take `5 min` to walk through all the files
 
 ## Tasks
 
-### Development
-In `lab-2d`, you will create a collection of `MyStudentModels` instances and write a `find` function to locate the index of a particular student in our collection of students.
-
-1. Implement the `MyStudentModel` struct in the `Types.jl` file. `MyStudentModel` has two fields: a student id field (`sid::Int64`) and a netid field (`netid::String`). 
-1. Implement the `build(model::Type{MyStudentModel}; sid::Int64 = 0, netid::String="abc123")::MyStudentModel` function in `Factory.jl`
-1. Build an `Array{MyStudentModel,1}` holding random students using the `build` function.
-1. Complete the implementation of the `find` function in `Compute.jl` that returns the index of the student object by matching the `sid` and `netid` fields
-
-In all cases, make sure to complete `docstrings` for each function and struct. For more information on the `docstring` syntax, see [here](https://docs.julialang.org/en/v1/manual/documentation/#Writing-Documentation).
-
 ### Testing
-In `lab-2d`, we have included example tests which are designed to verify the correctness of your codde. 
-* The `testme_assert.jl` file is an `old school` sort of test plan that uses the `@assert macro` function to verify the correctness of your code. More details about the `@assert` macro can be found [here](https://docs.julialang.org/en/v1/base/base/#Base.@assert).
+In `lab-2d`, we have included example tests which are designed to verify the correctness of your code. 
+* The `testme_assert.jl` file is an `old school` test plan that uses the `@assert macro` function to verify the correctness of your code. More details about the `@assert macro` can be found [here](https://docs.julialang.org/en/v1/base/base/#Base.@assert).
 * The `testme_testset.jl` file is a more modern test plan that uses the `@testset` macro in combination with the [Test package](https://docs.julialang.org/en/v1/stdlib/Test/#Unit-Testing) to verify the correctness of your code. More details about the `@testset` macro can be found [here](https://docs.julialang.org/en/v1/stdlib/Test/#Test.@testset).
 
-Let's run these test together to verify the correctness of your code.
+Let's run these test together to verify the correctness of the code. At this point, all tests should fail because you haven't implemented the `MyStudentModel` struct or the `build` and `find` functions. 
+To run the tests, execute the following command in the `root` directory of `lab-2d`:
+
+```julia
+include("testme_testset.jl");
+```
+
+### Development
+In `lab-2d`, create a collection of `MyStudentModels` instances and write a `find` function to locate the index of a particular student in our collection of students.
+
+1. Implement a `MyStudentModel` struct which is `mutable` in the `Types.jl` file. `MyStudentModel` has two fields: a student id field (`sid::Int64`) and a netid field (`netid::String`). 
+    * Implement a default constructor for `MyStudentModel` that initializes empty values for `sid` and `netid`. [See the notes for more information](https://varnerlab.github.io/CHEME-4800-5800-ComputingBook/unit-1-basics/types.html#composite-types)
+1. `Debug` the `build(model::Type{MyStudentModel}; sid::Int64 = 0, netid::String="abc123")::MyStudentModel` function in `Factory.jl`
+1. `Debug` the implementation of the `find` function in `Compute.jl`. The `find` function returns the index of the student object by matching the `sid` and `netid` fields with a test student object.
+
+In all cases, make sure to complete `docstrings` for each function and struct. For more information on the `docstring` syntax, see [here](https://docs.julialang.org/en/v1/manual/documentation/#Writing-Documentation).

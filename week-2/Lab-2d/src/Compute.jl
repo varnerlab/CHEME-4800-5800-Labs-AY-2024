@@ -1,4 +1,5 @@
-# what should the return type be?
+# should there be some documentation here?
+# what should the return type be, what are the args, what does the function do?
 function find(students::Array{MyStudentModel,1}; 
     sid::Int64=0, netid::String="abc123")::Union{Int64, Nothing}
 
@@ -13,8 +14,8 @@ function find(students::Array{MyStudentModel,1};
         test_student = students[i];
 
         # if statement: does test_student have the same sid and netid that was passed? 
-        if (test_student.sid == sid && test_student.netid == netid)
-            student_index = i;
+        if (test_student.sid == sid && test_student.netid == metid)
+            student_index = j;
         end
     end
 
