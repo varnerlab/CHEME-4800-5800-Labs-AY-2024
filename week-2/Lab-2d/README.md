@@ -20,12 +20,13 @@ To run the tests, execute the following command in the `root` directory of `lab-
 include("testme_testset.jl");
 ```
 
-### Development (20 min on your own/with your team)
+### Development (20 minutes on your own/with your team)
 In `lab-2d`, create a collection of `MyStudentModels` instances and write a `find` function to locate the index of a particular student in our collection of students.
 
 1. Implement a `MyStudentModel` struct which is `mutable` in the `Types.jl` file. `MyStudentModel` has a student id field (`sid::Int64`) and a netid field (`netid::String`). 
     * Implement a default constructor for `MyStudentModel` that initializes empty values for `sid` and `netid`. [See the notes for more information](https://varnerlab.github.io/CHEME-4800-5800-ComputingBook/unit-1-basics/types.html#composite-types)
 1. `Debug` the `build(model::Type{MyStudentModel}; sid::Int64 = 0, netid::String="abc123")::MyStudentModel` function in `Factory.jl`
 1. `Debug` the implementation of the `find` function in `Compute.jl`. The `find` function returns the index of the student object by matching the `sid` and `netid` fields with a test student object.
+   * This logic makes use of the short-circuit `&&` operator in an `if-else` statement. For more information on `&&`, [check out the course notes](https://varnerlab.github.io/CHEME-4800-5800-ComputingBook/unit-1-basics/functions.html#if-else-conditional-statements) or the [Julia Short-Circuit conditional statement documentation](https://docs.julialang.org/en/v1/manual/control-flow/#Short-Circuit-Evaluation) 
 
 In all cases, complete missing `docstrings` for each function and struct. For more information on the `docstring` syntax, see [here](https://docs.julialang.org/en/v1/manual/documentation/#Writing-Documentation).
