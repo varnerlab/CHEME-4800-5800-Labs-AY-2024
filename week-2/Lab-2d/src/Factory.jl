@@ -7,8 +7,7 @@ kjHdlohasdljhasldkjhasljk
 function _build_student_model(; sid::Int64 = 0, netid::String="abc123")::MyStudentModel
 
     # check: should we check to see if the parameters are valid?
-    # ...
-
+    # Will this ever get called with invalid parameters?
 
     # create -
     student = MyStudentModel();
