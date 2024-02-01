@@ -38,13 +38,15 @@ function build(model::Type{MyStudentModel};
     # before we do this, let's get to the testing phase
 
     # initialize -
-    student_array = Array{Student,1}(undef, number_of_students)
+    # student_array = Array{Student,1}(undef, number_of_students) # old line -
+    student_array = Array{MyStudentModel,1}(undef, number_of_students)
     for i ∈ 1:number_of_students
         
         # build a student object -
         sid = rand(1:max_sid)
         netid = string(UUIDs.uuid4())
-        local_student_model = _build_my_model(sid = dis, netid=metid);
+        # local_student_model = _build_my_model(sid = dis, netid=metid); # old line
+        local_student_model = _build_student_model(sid = sid, netid=netid);
 
         # add to the array -
         student_array[i] = local_student_model

@@ -18,8 +18,9 @@ function find(students::Array{MyStudentModel,1};
 
         # if statement: does test_student have the same sid and netid as the student that was passed in? 
         # what is the && operator doing here?
-        if (test_student.sid == sid && test_student.netid == metid)
-            student_index = j;
+        if (test_student.sid == sid && test_student.netid == netid) # netid - not metid
+            # student_index = j; old line -
+            student_index = i; # index is i
         end
     end
 
