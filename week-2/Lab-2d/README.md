@@ -20,7 +20,7 @@ To run the tests, execute the following command in the `root` directory of `lab-
 include("testme_testset.jl");
 ```
 
-### Development (20 minutes on your own/with your team)
+### Development (25 minutes on your own/with your team)
 In `lab-2d`, create a collection of `MyStudentModels` instances and write a `find` function to locate the index of a particular student in our collection of students.
 
 1. Implement a `MyStudentModel` struct which is `mutable` in the `Types.jl` file. `MyStudentModel` has a student id field (`sid::Int64`) and a netid field (`netid::String`). 
