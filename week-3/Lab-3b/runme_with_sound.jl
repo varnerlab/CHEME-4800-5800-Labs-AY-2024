@@ -11,6 +11,6 @@ for i ∈ 1:number_of_samples
 end
 
 # # create an array of random numbers -
-random_input_array = rand(1:21, 24);
+random_input_array = rand(1:21, 40);
 random_input_array_sorted = sort(random_input_array);
-sorted_output_array = bubble_sort(random_input_array; sounds=sound_dictionary)
+sorted_output_array = bubble_sort(random_input_array; sounds=nothing)
