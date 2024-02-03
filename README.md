@@ -16,5 +16,5 @@ Engineering practice increasingly relies on computational tools and data analysi
 * [Lab 2d: Introduction to Structs, Conditional Evaluation and Testing](./week-2/Lab-2d/README.md)
 
 ### Week 3: Introduction to Control Flow, Collections and Iteration
-* [Lab 3b: Introduction to Conditional Statements and Control flow in Julia, Python, and C/C++](./week-3/Lab-3b/README.md)
-* [Lab 3d: Introduction to Searching, Sorting, and Parsing Operations using for and while loops](./week-3/Lab-3d/README.md)
+* [Lab 3b: Introduction to sorting algortihms using `for` loops](./week-3/Lab-3b/README.md)
+* [Lab 3d: Introduction to delimied file parsing operations for numerical and textual data](./week-3/Lab-3d/README.md)
