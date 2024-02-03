@@ -3,7 +3,7 @@ include("Include.jl");
 
 # load the sounds library -
 sound_dictionary = Dict{Int64, Tuple{Matrix{Float64}, Float32}}()
-number_of_samples = 63;
+number_of_samples = 128;
 for i ∈ 1:number_of_samples
     filename = joinpath(_PATH_TO_SOUNDS, "example-$(i).wav")
     y, fs = wavread(filename)
