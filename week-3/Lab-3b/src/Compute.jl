@@ -20,8 +20,12 @@ function bubble_sort(array::Array{T,1};
     # main -
     for i ∈ 1:N
 
-        @show i, arr
-
+        
+        if (sounds !== nothing)
+            @show i, arr
+            play_sound(arr; sounds=sounds)
+        end
+        
         for j ∈ 1:N-i
             if arr[j] > arr[j+1]
 
@@ -29,11 +33,6 @@ function bubble_sort(array::Array{T,1};
                 tmp = arr[j]
                 arr[j] = arr[j+1]
                 arr[j+1] = tmp
-
-                if (sounds !== nothing)
-                    @show i, j, j+1, arr
-                    play_sound(arr; sounds=sounds)
-                end
 
                 # fancy impl (but hard to understand)
                 # arr[j], arr[j+1] = arr[j+1], arr[j] # check: what is this line doing?

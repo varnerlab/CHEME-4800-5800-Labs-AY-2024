@@ -10,7 +10,7 @@ for i ∈ 1:number_of_samples
     sound_dictionary[i] = (y, fs)
 end
 
-# create an array of random numbers -
-random_input_array = rand(1:21, 5);
+# # create an array of random numbers -
+random_input_array = rand(1:21, 24);
 random_input_array_sorted = sort(random_input_array);
 sorted_output_array = bubble_sort(random_input_array; sounds=sound_dictionary)
