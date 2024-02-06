@@ -17,7 +17,7 @@ Watch the [Bubble sort video](https://www.youtube.com/watch?v=uJLwnsLn0_Q), then
 include("testme_bubble_sort.jl")
 ```
 
-* After completing the `bubble_sort` function, take `5 min` to implement the `bubble_sort!` function in the `Compute.jl` file. This is an in-place version of the `bubble_sort` function. To test your implementation, you can execute the `testme_mutating_bubble_sort.jl` script.
+* After completing the `bubble_sort` function, take `5 min` to implement the `bubble_sort!` function in the `Compute.jl` file. Hint: this is the same logic as the non-mutating version! To test your implementation, you can execute the `testme_mutating_bubble_sort.jl` script.
     * Is the `random_input_array` sorted after calling the `bubble_sort!` function? 
 
 ```julia
