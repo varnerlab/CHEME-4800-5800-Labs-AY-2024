@@ -6,7 +6,26 @@ The objective of `lab-3b` is to give students practice with understanding and an
 
 Both of these approaches are much less efficient on large arrays than advanced algorithms such as [quicksort](https://en.wikipedia.org/wiki/Quicksort), [heapsort](https://en.wikipedia.org/wiki/Heapsort), or [merge sort](https://en.wikipedia.org/wiki/Merge_sort). However, they are simple to understand and implement, and are useful for small data sets or data sets that are nearly sorted.
 
-## Prerequisite 
-Break up into teams of 2-3 people and take `5 min` to walk through all the files (starting with `Include.jl` in the `root` directory) in `Lab-3b`. At the end of `5 min`, we'll do a class Q&A to ensure everyone understands the purpose of each file
+## Prerequisite
+Watch the [Bubble sort video](https://www.youtube.com/watch?v=uJLwnsLn0_Q), then break up into teams of 2-3 people and take `5 min` to walk through all the files (starting with `Include.jl` in the `root` directory) in `Lab-3b`. 
 
-In `lab-3b`, you will create lists of random numbers of different lengths and compute how long it takes to sort these lists using different sorting algorithms using the [BenchmarkTools](https://github.com/JuliaCI/BenchmarkTools.jl) package.
+### Tasks
+* Once you understand all the codes (or at least the purpose of each file), take `15 min` to complete the implementation of the `bubble_sort` function in the `Compute.jl` file. You can execute the `testme_bubble_sort.jl` script to test your implementation.
+    * Is the `random_input_array` sorted after calling the `bubble_sort` function? 
+
+```julia
+include("testme_bubble_sort.jl")
+```
+
+* Once you have completed the `bubble_sort` function, take `5 min` to complete the implementation of the `bubble_sort!` function in the `Compute.jl` file. This is an in-place version of the `bubble_sort` function. You can execute the `testme_mutating_bubble_sort.jl` script to test your implementation.
+    * Is the `random_input_array` sorted after calling the `bubble_sort!` function? 
+
+```julia
+include("testme_mutating_bubble_sort.jl")
+```
+
+* `Fun time`: Let's _listen_ to `bubble_sort` as it sorts the `random_input_array` by calling the `runme_bubble_sort_with_sound.jl` script.  
+
+```julia
+include("runme_bubble_sort_with_sound.jl")
+```
