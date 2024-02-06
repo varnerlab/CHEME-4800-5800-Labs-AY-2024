@@ -10,14 +10,14 @@ Both of these approaches are much less efficient on large arrays than advanced a
 Watch the [Bubble sort video](https://www.youtube.com/watch?v=uJLwnsLn0_Q), then break up into teams of 2-3 people and take `5 min` to walk through all the files (starting with `Include.jl` in the `root` directory) in `Lab-3b`. 
 
 ### Tasks
-* Once you understand all the codes (or at least the purpose of each file), take `15 min` to complete the implementation of the `bubble_sort` function in the `Compute.jl` file. Don't overthink this: it's only `3` lines of code! You can execute the `testme_bubble_sort.jl` script to test your implementation.
+* `TODO`: Once you understand all the codes (or at least the purpose of each file), take `15 min` to complete the implementation of the `bubble_sort` function in the `Compute.jl` file. Don't overthink this: it's only `3` lines of code! You can execute the `testme_bubble_sort.jl` script to test your implementation.
     * Is the `random_input_array` sorted after calling the `bubble_sort` function? 
 
 ```julia
 include("testme_bubble_sort.jl")
 ```
 
-* After completing the `bubble_sort` function, take `5 min` to implement the `bubble_sort!` function in the `Compute.jl` file. Hint: this is the same logic as the non-mutating version! To test your implementation, you can execute the `testme_mutating_bubble_sort.jl` script.
+* `TODO`: After completing the `bubble_sort` function, take `5 min` to implement the `bubble_sort!` function in the `Compute.jl` file. Hint: this is the same logic as the non-mutating version! To test your implementation, you can execute the `testme_mutating_bubble_sort.jl` script.
     * Is the `random_input_array` sorted after calling the `bubble_sort!` function? 
 
 ```julia

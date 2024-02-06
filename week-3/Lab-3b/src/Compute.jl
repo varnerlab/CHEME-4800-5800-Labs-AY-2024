@@ -31,10 +31,8 @@ function bubble_sort(array::Array{T,1};
         for j ∈ 1:N-i
             if arr[j] > arr[j+1]
 
-                # swap that values at j and j+1
-                tmp = arr[j]
-                arr[j] = arr[j+1]
-                arr[j+1] = tmp
+                # TODO: swap that values at j and j+1
+                # ...
 
             end
         end
@@ -77,10 +75,8 @@ function bubble_sort!(array::Array{T,1};
         for j ∈ 1:N-i
             if arr[j] > arr[j+1]
 
-                # swap that values at j and j+1
-                tmp = arr[j]
-                arr[j] = arr[j+1]
-                arr[j+1] = tmp
+                # TODO: swap that values at j and j+1
+                # ...
 
             end
         end
