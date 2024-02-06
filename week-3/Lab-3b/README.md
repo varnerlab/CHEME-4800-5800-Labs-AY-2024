@@ -24,7 +24,7 @@ include("testme_bubble_sort.jl")
 include("testme_mutating_bubble_sort.jl")
 ```
 
-* `Fun time`: Let's _listen_ to `bubble_sort` as it sorts the `random_input_array` by calling the `runme_bubble_sort_with_sound.jl` script: 
+* `Fun time`: Let's listen to `bubble_sort` as it sorts the `random_input_array` by calling the `runme_bubble_sort_with_sound.jl` script: 
 
 ```julia
 include("runme_bubble_sort_with_sound.jl")
