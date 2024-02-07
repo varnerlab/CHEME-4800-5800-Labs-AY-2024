@@ -1,2 +1,3 @@
 # `Lab-3d` Introduction to delimied file parsing operations for numerical and textual data
 `Lab 3d` will give students practice with understanding and analyzing simple file parsing operations that rely on `open`, `read`, and `write` functions to read and write data to and from files. In this lab, we will focus on loading a [Markatable Treasury Securities dataset downloaed from TreasuryDirect.gov](https://www.treasurydirect.gov/govt/reports/pd/mspd/mspd.htm).
+
