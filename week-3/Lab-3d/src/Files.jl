@@ -6,14 +6,14 @@
         header::Bool = true, verbose::Bool = false) -> Dict{Int, MyTreasuryDataRecordType}
 """
 function parsefile(filepath::String, fieldtypes::Dict{Int, Pair{String,Type}}; delim::Char=',', 
-    header::Bool = true, verbose::Bool = false)::Dict{Int, MyTreasuryDataRecordType}
+    header::Bool = true, verbose::Bool = false)::Dict{Int64, MyTreasuryDataRecordType}
     
     # TODO: check that file path is legit, if not throw an error?
     # ...
     
     # initialize -
     linecounter = 1;
-    records = Dict{Int, MyTreasuryDataRecordType}()
+    records = Dict{Int64, MyTreasuryDataRecordType}()
     df = dateformat"mm/dd/yyyy"; # the date format
 
     # how many fields do we have?
