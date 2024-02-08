@@ -22,7 +22,7 @@ include("runme_simple_read.jl")
 * What are the `pros` and `cons` of this approach?
 
 ### Method 2: The `betterreadfile` function.
-In `lab-3d`, we have implemented a `betterreadfile` function in the `Files.jl` file that uses the `open-do` pattern to read the [Bubblesort.csv](data/Bubblesort.csv) file. However, the data gets returned in a different format in this case. Execute the the `runme_better_read.jl` script:
+In `lab-3d`, we have implemented a `betterreadfile` function in the `Files.jl` file that uses the `open-do` pattern to read the [Bubblesort.csv](data/Bubblesort.csv) file. However, the data gets returned in a different format in this case. Execute the `runme_better_read.jl` script:
 
 ```julia
 include("runme_better_read.jl")
