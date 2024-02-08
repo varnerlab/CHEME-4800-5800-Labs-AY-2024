@@ -18,6 +18,7 @@ include("runme_simple_read.jl")
 ```
 
 * What is the type of the data returned by the `simplereadcsvfile` function?
+* Can you break this function, e.g., by passing a file that doesn't exist? 
 * What are the `pros` and `cons` of this approach?
 
 ### Method 2: The `betterreadcsvfile` function.
@@ -28,6 +29,7 @@ include("runme_better_read.jl")
 ```
 
 * What is the type of the data returned by the `betterreadcsvfile` function?
+* Can you break this function, e.g., by passing a file that doesn't exist, or by messing around the arguments?
 * What are the `pros` and `cons` of this approach?
 
 ### Method 3: The `bestreadcsvfile` function.
@@ -39,4 +41,5 @@ include("runme_best_read.jl")
 ```
 
 * What is the type of the data returned by the `betterreadcsvfile` function?
+* Can you break this function, e.g., by passing a file that doesn't exist, or by messing around the arguments?
 * What are the `pros` and `cons` of this approach?
