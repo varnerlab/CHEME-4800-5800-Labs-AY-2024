@@ -2,7 +2,7 @@
 `Lab 3d` will give students practice with understanding and analyzing simple file parsing operations that rely on the `open-do` pattern that we introduced in the lecture.
 
 ## Data
-To get a better idea of the performance of the [Bubble Sort algorithm](https://en.wikipedia.org/wiki/Bubble_sort), I used the [BenchmarkTools.jl package](https://github.com/JuliaCI/BenchmarkTools.jl) to do some benchmarking of the time required to sort a random array of integers. We collected the `mean` and `standard deviation` of the time needed to sort a random array of integers as a function of the length of the vector. We stored this data in the [Bubblesort.csv](data/Bubblesort.csv) file (an example `comma-separated value` file).
+To get a better idea of the performance of the [Bubble Sort algorithm](https://en.wikipedia.org/wiki/Bubble_sort), I used the [BenchmarkTools.jl package](https://github.com/JuliaCI/BenchmarkTools.jl) to do some benchmarking of the time required to sort a random array of integers. We collected the `mean` and `standard deviation` of the time needed to sort a random array of integers as a function of the length of the vector. We stored this data in the [Bubblesort.csv](data/Bubblesort.csv) file, which is an example `comma-separated value` file.
 
 ## Prerequisite 
 Break up into teams of 2-3 people and take `5 min` to walk through all the files (starting with `Include.jl` in the `root` directory) in `Lab-3d`. At the end of `5 min`, we'll do a class Q&A to ensure everyone understands the purpose of each file.
