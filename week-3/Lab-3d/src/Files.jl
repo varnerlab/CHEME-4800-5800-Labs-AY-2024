@@ -1,13 +1,12 @@
 """
-    function simplereadcsvfile(path::String; 
-        delim::Char=',', keyindex::Int64 = 1) -> Tuple{Array{String,1}, Dict{Int, Array{Number,1}}}
+    function simplereadcsvfile(path::String; delim::Char=',') -> Tuple{Array{String,1}, Dict{Int64, Array{Float64,1}}}
 """ 
-function simplereadcsvfile(path::String; 
-    delim::Char=',', keyindex::Int64 = 1)::Tuple{Array{String,1}, Dict{Int, Array{Number,1}}}
+function simplereadcsvfile(path::String; delim::Char=',')::Tuple{Array{String,1}, Dict{Int, Array{Float64,1}}}
     
-    # check: is the path arg legit?
-    # ....
-
+    # check: is the path arg legit? - if not throw an error
+    # TODO: check to see if the path is legit
+    # TODO: check to see if the file is a csv file
+   
     # initialize
     counter = 1
     header = Array{String,1}()
@@ -28,19 +27,13 @@ function simplereadcsvfile(path::String;
 
                 # First, initialize some temporary storage -
                 tmpstorage = Array{Float64,1}()
-                keyfield = fields[keyindex] # get a key field
                 for i ∈ eachindex(fields) # iterate over the fields
-                    
-                    # for all fields NOT equal to the key field, parse the value and push it to the temporary storage
-                    if (i != keyindex)
-                        push!(tmpstorage, parse(Float64, fields[i]))
-                    end
+                    push!(tmpstorage, parse(Float64, fields[i])) # convert everything to a Float64 and push it to the temporary storage
                 end
-
-                # do not add bad keys -
-                if (isempty(keyfield) == false)
-                    data[parse(Int, keyfield)] = tmpstorage;
-                end
+                
+                # store the data -
+                data[counter] = tmpstorage; # add the temporary storage to the data dictionary
+                counter += 1 # update the counter
             end
         end
     end
@@ -57,9 +50,9 @@ end
 function betterreadcsvfile(path::String; 
     delim::Char=',', keyfielddata = 1=>Int64)::Tuple{Array{String,1}, Dict{Int, MyRuntimeNumericalRecordType}}
     
-    # TODO is the path arg legit?
-    # if not a legit path, throw an error
-    # if not a csv file, throw an error
+    # check: is the path arg legit? - if not throw an error
+    # TODO: check to see if the path is legit
+    # TODO: check to see if the file is a csv file
 
     # initialize
     counter = 1
@@ -102,6 +95,17 @@ function betterreadcsvfile(path::String;
     # return -
     return (header, data)
 end
+
+function bestreadcsvfile(path::String)::DataFrame
+
+    # check: is the path arg legit? - if not throw an error
+    # TODO: check to see if the path is legit
+    # TODO: check to see if the file is a csv file
+
+    # read the file -
+    return CSV.read(path,DataFrame)
+end
+    
 
 
 # -- PUBLIC FUBCTIONS ABOVE HERE ------------------------------------------------------------------------------- #
