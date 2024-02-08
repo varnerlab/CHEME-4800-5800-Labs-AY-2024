@@ -10,29 +10,29 @@ Break up into teams of 2-3 people and take `5 min` to walk through all the files
 ## Tasks
 Let's use three different methods to read the data in the [Bubblesort.csv](data/Bubblesort.csv) file and analyze the pros and cons of each approach. 
 
-### Method 1: The `simplereadcsvfile` function.
-In `lab-3d`, we have implemented a `simplereadcsvfile` function in the `Files.jl` file that uses the `open-do` pattern to read the [Bubblesort.csv](data/Bubblesort.csv) file. Execute the the `runme_simple_read.jl` script:
+### Method 1: The `simplereadfile` function.
+In `lab-3d`, we have implemented a `simplereadfile` function in the `Files.jl` file that uses the `open-do` pattern to read the [Bubblesort.csv](data/Bubblesort.csv) file. Execute the the `runme_simple_read.jl` script:
 
 ```julia
 include("runme_simple_read.jl")
 ```
 
-* What is the data type returned by the `simplereadcsvfile` function?
+* What is the data type returned by the `simplereadfile` function?
 * Can you break this function, e.g., by passing a file that doesn't exist? 
 * What are the `pros` and `cons` of this approach?
 
-### Method 2: The `betterreadcsvfile` function.
-In `lab-3d`, we have implemented a `betterreadcsvfile` function in the `Files.jl` file that uses the `open-do` pattern to read the [Bubblesort.csv](data/Bubblesort.csv) file. However, the data gets returned in a different format in this case. Execute the the `runme_better_read.jl` script:
+### Method 2: The `betterreadfile` function.
+In `lab-3d`, we have implemented a `betterreadfile` function in the `Files.jl` file that uses the `open-do` pattern to read the [Bubblesort.csv](data/Bubblesort.csv) file. However, the data gets returned in a different format in this case. Execute the the `runme_better_read.jl` script:
 
 ```julia
 include("runme_better_read.jl")
 ```
 
-* What is the data type returned by the `betterreadcsvfile` function?
+* What is the data type returned by the `betterreadfile` function?
 * Can you break this function, e.g., by passing a file that doesn't exist or messing around the arguments?
 * What are the `pros` and `cons` of this approach?
 
-### Method 3: The `bestreadcsvfile` function.
+### Method 3: The `bestreadfile` function.
 In `lab-3d`, we have implemented a `bestreadcsvfile` function in the `Files.jl` file that uses the [CSV.jl package](https://github.com/JuliaData/CSV.jl) to read the [Bubblesort.csv](data/Bubblesort.csv) file. This method returns the data as a `DataFrame` object, a special type exported from the [DataFrames.jl package](https://dataframes.juliadata.org/stable/). Execute the
 `runme_best_read.jl` script:
 
@@ -40,6 +40,6 @@ In `lab-3d`, we have implemented a `bestreadcsvfile` function in the `Files.jl` 
 include("runme_best_read.jl")
 ```
 
-* What is the data type returned by the `betterreadcsvfile` function?
+* What is the data type returned by the `betterreadfile` function?
 * Can you break this function, e.g., by passing a file that doesn't exist or messing around the arguments?
 * What are the `pros` and `cons` of this approach?

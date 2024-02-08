@@ -5,4 +5,4 @@ include("Include.jl");
 path_to_data_file = joinpath(_PATH_TO_DATA,"Bubblesort.csv");
 
 # read the file -
-header, data = betterreadcsvfile(path_to_data_file);
+header, data = betterreadfile(path_to_data_file);

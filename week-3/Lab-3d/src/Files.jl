@@ -1,7 +1,7 @@
 """
     function simplereadcsvfile(path::String; delim::Char=',') -> Tuple{Array{String,1}, Dict{Int64, Array{Float64,1}}}
 """ 
-function simplereadcsvfile(path::String; delim::Char=',')::Tuple{Array{String,1}, Dict{Int, Array{Float64,1}}}
+function simplereadfile(path::String; delim::Char=',')::Tuple{Array{String,1}, Dict{Int, Array{Float64,1}}}
     
     # check: is the path arg legit? - if not throw an error
     # TODO: check to see if the path is legit
@@ -53,7 +53,7 @@ end
         delim::Char=',', keyindex::Int64 = 1) -> Tuple{Array{String,1}, Dict{Int, MyRuntimeNumericalRecordType}}
 
 """
-function betterreadcsvfile(path::String; 
+function betterreadfile(path::String; 
     delim::Char=',', keyfielddata = 1=>Int64)::Tuple{Array{String,1}, Dict{Int, MyRuntimeNumericalRecordType}}
     
     # check: is the path arg legit? - if not throw an error
@@ -108,7 +108,7 @@ function betterreadcsvfile(path::String;
     return (header, data)
 end
 
-function bestreadcsvfile(path::String)::DataFrame
+function bestreadfile(path::String)::DataFrame
 
     # check: is the path arg legit? - if not throw an error
     # TODO: check to see if the path is legit
