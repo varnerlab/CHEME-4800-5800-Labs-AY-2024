@@ -6,7 +6,6 @@ function simplereadfile(path::String; delim::Char=',')::Tuple{Array{String,1}, D
     # check: is the path arg legit? - if not throw an error
     # TODO: check to see if the path is legit
     # TODO: check to see if the file is a csv file
-
     is_path_a_path = ispath(path);
     does_path_point_to_yaml_file = endswith(path, ".csv");
     if (is_path_a_path == false) || (does_path_point_to_yaml_file == false)
