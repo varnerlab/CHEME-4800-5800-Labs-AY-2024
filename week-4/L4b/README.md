@@ -25,5 +25,5 @@ Break up into teams of 2-3 people and take `10 min` to walk through all the file
 * Let's dig into the `result_points` dictionary and see what we can find. In particular, let's look at the `properties` key and see what we can find there (there is a lot of information and something pretty interesting for us).
 
 ## Tasks: Complete the implementation of `runme_ithaca_v2.jl`
-Let's explore using a `custom data handler` to transform the response data. The `runme_ithaca_v2.jl` script will have all the same tasks as `runme_ithaca_v1.jl`, but we will be calling the `forecast` endpoint with a custom handler function `process_forecast_response_dataframe` (to get back a `DataFrame` instead of a tree of dictionaries).
-    * This is advanced topic: Let's walktrough how these components work, what methods are called, etc.
+Let's use a `custom data handler` to transform the response data. The `runme_ithaca_v2.jl` script will have all the same tasks as `runme_ithaca_v1.jl`, but we will be calling the `forecast` endpoint with a custom handler function `process_forecast_response_dataframe` (to get back a `DataFrame` instead of a tree of dictionaries).
+    * This is an advanced topic. Let's walk through how these components work, what methods are called, etc.
