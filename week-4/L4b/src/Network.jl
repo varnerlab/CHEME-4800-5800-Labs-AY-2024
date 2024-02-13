@@ -31,7 +31,7 @@ end
 
 # --- PUBLIC METHODS BELOW HERE -------------------------------------------------------------------------------- #
 
-# New pattern: This makes it look we are calling a method on an struct, but we are not. 
+# New pattern: This makes it look we are calling a method on an struct, but we are not!
 # We are using the Julia type system (and something called multiple dispatch) to call the correct method.
 # For more information on multiple dispatch, see: https://docs.julialang.org/en/v1/manual/methods/#Defining-Methods
 (endpoint::Type{T})(url::String; handler::Function = _default_handler_process_weather_response) where T <: AbstractWeatherEndpointModel = _api(endpoint, url, handler = handler)
