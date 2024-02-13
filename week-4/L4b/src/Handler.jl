@@ -21,6 +21,13 @@ end
 # --- PRIVATE METHODS ABOVE HERE ------------------------------------------------------------------------------- #
 
 # --- PUBLIC METHODS BELOW HERE -------------------------------------------------------------------------------- #
+"""
+    process_forecast_response_dataframe(model::Type{T}, response::String) -> DataFrame where T <: AbstractWeatherEndpointModel
+
+This function is used to process the response from the National Weather Service API. 
+It takes two arguments, a model of type `T`, and a response string.
+We parse the response string, and return a `DataFrame` populated from the response. 
+"""
 function process_forecast_response_dataframe(model::Type{T}, response::String)::DataFrame where T <: AbstractWeatherEndpointModel
 
     # initialize -
