@@ -10,7 +10,7 @@ Break up into teams of 2-3 people and take `10 min` to walk through all the file
     * Complete the implementation of the `MyWeatherGridPointEndpointModel` struct in `src/Types.jl`. This should be a mutable struct with fields for `latitude,` and `longitude.` It should have a constructor that takes `latitude` and `longitude` as keyword arguments, so can build the `struct` with a call like:
     
     ```julia
-     MyWeatherGridPointEndpointModel(latitude=42.443961, longitude=-76.501881)
+     model = MyWeatherGridPointEndpointModel(latitude=42.443961, longitude=-76.501881)
      ```
 
 * Build a properly formatted [uniform resource locator (URL) string](https://en.wikipedia.org/wiki/URL) containing the information needed by the `points` endpoint.
@@ -25,4 +25,5 @@ Break up into teams of 2-3 people and take `10 min` to walk through all the file
 * Let's dig into the `result_points` dictionary and see what we can find. In particular, let's look at the `properties` key and see what we can find there (there is a lot of information and something pretty interesting for us).
 
 ## Tasks: Complete the implementation of `runme_ithaca_v2.jl`
-The `runme_ithaca_v2.jl` script will have all the same tasks as `runme_ithaca_v1.jl`, but we will be calling the `forecast` endpoint with the custom handler `process_forecast_response_dataframe` (to get back a `DataFrame` instead of a tree of dictionaries).
+Let's explore using a `custom data handler` to transform the response data. The `runme_ithaca_v2.jl` script will have all the same tasks as `runme_ithaca_v1.jl`, but we will be calling the `forecast` endpoint with a custom handler function `process_forecast_response_dataframe` (to get back a `DataFrame` instead of a tree of dictionaries).
+    * This is advanced topic: Let's walktrough how these components work, what methods are called, etc.
