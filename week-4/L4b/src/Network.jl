@@ -24,8 +24,8 @@ function _http_get_call_with_url(url::String)::Some{Union{ErrorException, String
     end
 end
 
-function api(model::Type{T}, complete_url_string::String;
-    handler::Function = _process_weather_response)::Dict{String, Any} where T <: AbstractWeatherEndpointModel
+function _api(model::Type{T}, complete_url_string::String;
+    handler::Function = _default_handler_process_weather_response) where T <: AbstractWeatherEndpointModel
 
     # execute -
     result_model = _http_get_call_with_url(complete_url_string);
@@ -41,3 +41,8 @@ function api(model::Type{T}, complete_url_string::String;
     # process and return -
     return handler(model, result_string)
 end
+
+# New pattern: This makes it look we are calling a method on an struct, but we are not. 
+# We are using the Julia type system (and something called multiple dispatch) to call the correct method.
+# For more information on multiple dispatch, see: https://docs.julialang.org/en/v1/manual/methods/#Defining-Methods
+(endpoint::Type{T})(url::String; handler::Function = _default_handler_process_weather_response) where T <: AbstractWeatherEndpointModel = _api(endpoint, url, handler = handler)

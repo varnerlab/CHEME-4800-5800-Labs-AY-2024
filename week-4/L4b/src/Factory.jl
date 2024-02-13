@@ -1,5 +1,11 @@
 
-function url(base::String, model::MyWeatherGridPointEndpointModel)::String
+
+
+
+"""
+    build(base::String, model::MyWeatherGridPointEndpointModel) -> String
+"""
+function build(base::String, model::MyWeatherGridPointEndpointModel)::String
 
     # get data -
     latitude = model.latitude;
