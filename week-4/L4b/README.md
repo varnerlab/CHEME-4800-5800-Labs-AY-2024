@@ -1,7 +1,5 @@
 # `Lab 4b`: Build a Software Development Kit for the National Weather Service API
-In `Lab 4b`, students will build a Software Development Kit (SDK) for the [National Weather Service API](https://www.weather.gov/documentation/services-web-api). 
-
-We'll pull down weather data for Ithaca, NY, using the `(latitude,longitude)` coordinates `42.443961` and `-76.501881`. We'll use the `points` endpoint to get the grid data for this location and use this data for additional calls. 
+In `Lab 4b`, students will build a Software Development Kit (SDK) for the [National Weather Service API](https://www.weather.gov/documentation/services-web-api). We'll pull down weather data for Ithaca, NY, using the `(latitude, longitude)` coordinates `42.443961` and `-76.501881`. We'll use the `points` endpoint to get the grid data for this location and use this data for additional calls. 
 
 ## Prerequisite 
 Break up into teams of 2-3 people and take `10 min` to walk through all the files (starting with `Include.jl` in the `root` directory) in `Lab-4b` and the [National Weather Service API documentation](https://www.weather.gov/documentation/services-web-api). At the end of `10 min`, we'll do a class Q&A to ensure everyone understands the purpose of each file.
