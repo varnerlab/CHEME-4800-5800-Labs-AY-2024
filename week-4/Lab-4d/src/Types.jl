@@ -20,6 +20,7 @@ mutable struct MyMoviewReviewDocumentModel <: AbstractTextDocumentModel
     records::Dict{Int, MyMoviewReviewRecordModel}
     tokenset::Set{String}
     tokens::Dict{String,Int64}
+    inverse::Dict{Int64,String}
     
     # constructor -
     MyMoviewReviewDocumentModel() = new(); # empty

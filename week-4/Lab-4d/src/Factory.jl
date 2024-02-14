@@ -63,12 +63,13 @@ function build(model::Type{MyMoviewReviewDocumentModel},
     # initialize -
     document = MyMoviewReviewDocumentModel(); # build an empty document model
     tokenset = Set{String}(); # build an empty set
+    tokens = Dict{String, Int64}();
+    inverse = Dict{Int64,String}();
 
     # first, set the records field on the document -
     document.records = records;
 
     # process each record, and build the overall list of tokens for this document -
-    document_tokens = Dict{String, Int}();
     for (_, record) ∈ records # iterate over the tokens in the records
         record_token_set = record.tokenset;
         for token ∈ record_token_set # iterate over the tokens in the record
@@ -76,6 +77,21 @@ function build(model::Type{MyMoviewReviewDocumentModel},
         end
     end
     document.tokenset = tokenset; # set the data on the document
+
+    # build an ordering for the tokens -
+    token_array = collect(tokenset) |> sort; # convert the set to an array, and sort it
+    for i ∈ eachindex(token_array) # iterate over the tokens
+        token = token_array[i]; # get the token
+        tokens[token] = i; # add the token to the dictionary
+    end
+    document.tokens = tokens; # set the data on the document
+
+    # inverse -
+    for (k,v) ∈ tokens # iterate over the tokens
+        inverse[v] = k; # add the token to the dictionary
+    end
+    document.inverse = inverse; # set the data on the document
+
 
     # return -
     return document;
