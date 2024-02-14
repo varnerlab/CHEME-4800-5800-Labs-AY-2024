@@ -1,4 +1,4 @@
-function readfile(path::String; delim=" ")::Dict{Int, MyMoviewReviewRecordModel}
+function readfile(path::String; delim=" ")::MyMoviewReviewDocumentModel
     # check: is the path arg legit? - if not throw an error 
 
     # initialize
@@ -18,5 +18,5 @@ function readfile(path::String; delim=" ")::Dict{Int, MyMoviewReviewRecordModel}
     end
 
     # return -
-    return records
+    return build(MyMoviewReviewDocumentModel, records);
 end
