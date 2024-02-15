@@ -8,7 +8,7 @@ Ultimately, we will build a system that can classify text as positive or negativ
 Break up into teams of 2-3 people and take `5 min` to walk through all the files (starting with `Include.jl` in the `root` directory) in `Lab-4d`. At the end of `5 min`, we'll do a class Q&A to ensure everyone understands the purpose of each file.
 
 ## Tasks
-* __Duration: 20 min__: Break up into teams and `debug` the `readfiles` function in `src/Files.jl`, and any other associated files/functions called by `readfiles`. You can test your implementation by running the `runtests.jl` file.
+* __Duration: 20 min__: Break up into teams and `debug` the `readfiles` function in `src/Files.jl` and any other associated files/functions called by `readfiles.` You can test your implementation by running the `runtests.jl` file.
     * The `readfiles` function reads an array of move review file names and returns a `Dict{Int, MyMoviewReviewDocumentModel}` where the key is the index of the review file, and the value is a `MyMoviewReviewDocumentModel` object.
 * __Duration 10 min__: Everything is a number. Once the `readfiles` (and any associated) functions are working, let's use a technique called [feature hashing](https://en.wikipedia.org/wiki/Feature_hashing) developed by our very own [Kilian Weinberger](https://www.cs.cornell.edu/~kilian/) to convert the text data into a numerical format. Debug the `hashing_vectorizer` function in `src/Compute.jl`. You can test your implementation by running the `runtests.jl` file.
     * The `hashing_vectorizer` function converts text data into a numerical format. See the [pseudo code in the Wikipedia article for guidance](https://en.wikipedia.org/wiki/Feature_hashing#Pseudocode_implementation).
