@@ -1,6 +1,14 @@
 """
+    build(model::Type{MyMoviewReviewRecordModel}, line::String; delim::String=",") -> MyMoviewReviewRecordModel
+
+Builds an instance of the `MyMoviewReviewRecordModel` type from a line of text.
+
+### Arguments
+- `model::Type{MyMoviewReviewRecordModel}`: The type of model to build, in this case `MyMoviewReviewRecordModel`.
+- `line::String`: The line of text to parse.
+- `delim::String = ","`: The delimiter to use for parsing the line.
 """
-function build(model::Type{MyMoviewReviewRecordModel}, line::String; delim::String=" ")::MyMoviewReviewRecordModel
+function build(model::Type{MyMoviewReviewRecordModel}, line::String; delim::String=",")::MyMoviewReviewRecordModel
     
     # initialize -
     tokenset = Set{String}(); # build an empty set
@@ -57,6 +65,15 @@ function build(model::Type{MyMoviewReviewRecordModel}, line::String; delim::Stri
     return record;
 end
 
+"""
+    build(model::Type{MyMoviewReviewDocumentModel}, records::Dict{Int64, MyMoviewReviewRecordModel}) -> MyMoviewReviewDocumentModel
+
+Builds an instance of the `MyMoviewReviewDocumentModel` type from a dictionary of records.
+
+### Arguments
+- `model::Type{MyMoviewReviewDocumentModel}`: The type of model to build, in this case `MyMoviewReviewDocumentModel`.
+- `records::Dict{Int64, MyMoviewReviewRecordModel}`: A dictionary of records to use for building the document.
+"""
 function build(model::Type{MyMoviewReviewDocumentModel}, 
     records::Dict{Int64, MyMoviewReviewRecordModel})::MyMoviewReviewDocumentModel
     
@@ -97,6 +114,15 @@ function build(model::Type{MyMoviewReviewDocumentModel},
     return document;
 end
 
+"""
+    build(model::Type{MyMoviewReviewDocumentCorpusModel}, records::Dict{Int64, MyMoviewReviewDocumentModel}) -> MyMoviewReviewDocumentCorpusModel
+
+Builds an instance of the `MyMoviewReviewDocumentCorpusModel` type from a dictionary of documents.
+
+### Arguments
+- `model::Type{MyMoviewReviewDocumentCorpusModel}`: The type of model to build, in this case `MyMoviewReviewDocumentCorpusModel`.
+- `records::Dict{Int64, MyMoviewReviewDocumentModel}`: A dictionary of documents to use for building the corpus.
+"""
 function build(model::Type{MyMoviewReviewDocumentCorpusModel}, 
     records::Dict{Int64, MyMoviewReviewDocumentModel})::MyMoviewReviewDocumentCorpusModel
     

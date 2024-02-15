@@ -2,6 +2,15 @@ abstract type AbstractTextRecordModel end
 abstract type AbstractTextDocumentModel end
 abstract type AbstractTextDocumentCorpusModel end
 
+"""
+    MyMoviewReviewRecordModel <: AbstractTextRecordModel
+
+### Fields 
+- `fields::Array{String,1}`: The tokens found in the record in the order they were found
+- `tokenset::Set{String}`: The set of tokens in the record (no order)
+- `tokens::Dict{String,Int64}`: A dictionary of tokens in alphabetical order (key: token, value: position)
+- `inverse::Dict{Int64,String}`: A dictionary mapping position to token (key: position, value: token)
+"""
 mutable struct MyMoviewReviewRecordModel <: AbstractTextRecordModel
     
     # data -
@@ -14,6 +23,15 @@ mutable struct MyMoviewReviewRecordModel <: AbstractTextRecordModel
     MyMoviewReviewRecordModel() = new(); # empty
 end
 
+"""
+    MyMoviewReviewDocumentModel <: AbstractTextDocumentModel
+
+### Fields
+- `fields::Array{String,1}`: The tokens (words) found in the document (collection of records) in the order they were found
+- `tokenset::Set{String}`: The set of tokens in the document (no order)
+- `tokens::Dict{String,Int64}`: A dictionary of tokens in alphabetical order (key: token, value: position) for the entire document
+- `inverse::Dict{Int64,String}`: A dictionary mapping position to token (key: position, value: token) for the entire document
+"""
 mutable struct MyMoviewReviewDocumentModel <: AbstractTextDocumentModel
     
     # data -

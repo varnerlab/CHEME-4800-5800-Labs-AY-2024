@@ -9,7 +9,7 @@ We'll use the [Cornell movie review v2.0 data set](http://www.cs.cornell.edu/peo
 ## Prerequisite 
 Break up into teams of 2-3 people and take `5 min` to walk through all the files (starting with `Include.jl` in the `root` directory) in `Lab-4d`. At the end of `5 min`, we'll do a class Q&A to ensure everyone understands the purpose of each file.
 
-### Tasks
+## Tasks
 1. Break up into groups and finish implementing the `load_review_file` function in `Files.jl`. The `load_review_file` function reads a text file and returns each line as an entry in a dictionary. 
 1. Load the `cv002_15918.txt` file in the positive reviews directory. 
 1. Analyze the word frequency for `cv002_15918.txt` (fill in the `runme.jl` script):
