@@ -8,7 +8,7 @@ abstract type AbstractTextDocumentCorpusModel end
 ### Fields 
 - `fields::Array{String,1}`: The tokens found in the record in the order they were found
 - `tokenset::Set{String}`: The set of tokens in the record (no order)
-- `tokens::Dict{String,Int64}`: A dictionary of tokens in alphabetical order (key: token, value: position)
+- `hash::Dict{String,Int64}`: A dictionary of tokens in alphabetical order (key: token, value: position)
 - `inverse::Dict{Int64,String}`: A dictionary mapping position to token (key: position, value: token)
 """
 mutable struct MyMoviewReviewRecordModel <: AbstractTextRecordModel
@@ -16,7 +16,7 @@ mutable struct MyMoviewReviewRecordModel <: AbstractTextRecordModel
     # data -
     fields::Array{String,1}
     tokenset::Set{String}
-    tokens::Dict{String,Int64}
+    hash::Dict{String,Int64}
     inverse::Dict{Int64,String}
     
     # constructor -
@@ -29,7 +29,7 @@ end
 ### Fields
 - `fields::Array{String,1}`: The tokens (words) found in the document (collection of records) in the order they were found
 - `tokenset::Set{String}`: The set of tokens in the document (no order)
-- `tokens::Dict{String,Int64}`: A dictionary of tokens in alphabetical order (key: token, value: position) for the entire document
+- `hash::Dict{String,Int64}`: A dictionary of tokens in alphabetical order (key: token, value: position) for the entire document
 - `inverse::Dict{Int64,String}`: A dictionary mapping position to token (key: position, value: token) for the entire document
 """
 mutable struct MyMoviewReviewDocumentModel <: AbstractTextDocumentModel
@@ -37,7 +37,7 @@ mutable struct MyMoviewReviewDocumentModel <: AbstractTextDocumentModel
     # data -
     records::Dict{Int, MyMoviewReviewRecordModel}
     tokenset::Set{String}
-    tokens::Dict{String,Int64}
+    hash::Dict{String,Int64}
     inverse::Dict{Int64,String}
     
     # constructor -

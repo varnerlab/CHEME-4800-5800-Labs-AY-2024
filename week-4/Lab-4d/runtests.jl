@@ -23,7 +23,7 @@ include("Include.jl")
         @test length(list_of_documents[1].records) == 25; # there should be at 25 records in the first document
 
         # how many tokens are in the first document?
-        @test length(list_of_documents[1].tokens) == 418; # there should be at least 418 tokens in the first document
+        @test length(list_of_documents[1].hash) == 418; # there should be at least 418 tokens in the first document
 
         # test what the first token is -
         @test list_of_documents[1].inverse[1] == "'80s"; # the first token should be the string "'80s"

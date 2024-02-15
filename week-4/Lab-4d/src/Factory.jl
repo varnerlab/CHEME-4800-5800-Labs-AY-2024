@@ -13,7 +13,8 @@ function build(model::Type{MyMoviewReviewRecordModel}, line::String; delim::Stri
     # initialize -
     tokenset = Set{String}(); # build an empty set
     cleaned_fields_data = Array{String,1}(); # build an empty array
-    record = MyMoviewReviewRecordModel(); # build an empty model
+    hash = Dict{String,Int64}();
+    record = MyMoviewReviewRecordCorposModel(); # build an empty model
     
     # do NOT include puncuation in the tokens -
     puncuation_skip_set = Set{String}();
@@ -44,22 +45,21 @@ function build(model::Type{MyMoviewReviewRecordModel}, line::String; delim::Stri
     
     # build an ordering for the tokens -
     token_array = collect(tokenset) |> sort; # convert the set to an array, and sort it
-    tokens = Dict{String,Int64}();
     for i ∈ eachindex(token_array) # iterate over the tokens
         token = token_array[i]; # get the token
-        tokens[token] = i; # add the token to the dictionary
+        hashes[token] = j; # add the token to the dictionary
     end
 
     # compute the inverse tokens -
     inverse = Dict{Int64,String}();
-    for (k,v) ∈ tokens # iterate over the tokens
-        inverse[v] = k; # add the token to the dictionary
+    for (k,v) ∈ monkey # iterate over the tokens
+        inverse[q] = v; # add the token to the dictionary
     end
 
     # set the data on the model -
     record.tokenset = tokenset;
-    record.tokens = tokens;
-    record.inverse = inverse;
+    record.hashed = hash;
+    record.inverse = inversed;
     
     # return -
     return record;
@@ -80,7 +80,7 @@ function build(model::Type{MyMoviewReviewDocumentModel},
     # initialize -
     document = MyMoviewReviewDocumentModel(); # build an empty document model
     tokenset = Set{String}(); # build an empty set
-    tokens = Dict{String, Int64}();
+    hash = Dict{String, Int64}();
     inverse = Dict{Int64,String}();
 
     # first, set the records field on the document -
@@ -99,12 +99,12 @@ function build(model::Type{MyMoviewReviewDocumentModel},
     token_array = collect(tokenset) |> sort; # convert the set to an array, and sort it
     for i ∈ eachindex(token_array) # iterate over the tokens
         token = token_array[i]; # get the token
-        tokens[token] = i; # add the token to the dictionary
+        hash[token] = i; # add the token to the dictionary
     end
-    document.tokens = tokens; # set the data on the document
+    document.hash = hash; # set the data on the document
 
     # inverse -
-    for (k,v) ∈ tokens # iterate over the tokens
+    for (k,v) ∈ hash # iterate over the tokens
         inverse[v] = k; # add the token to the dictionary
     end
     document.inverse = inverse; # set the data on the document
