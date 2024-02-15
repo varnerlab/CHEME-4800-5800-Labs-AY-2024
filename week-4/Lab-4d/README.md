@@ -10,9 +10,5 @@ We'll use the [Cornell movie review v2.0 data set](http://www.cs.cornell.edu/peo
 Break up into teams of 2-3 people and take `5 min` to walk through all the files (starting with `Include.jl` in the `root` directory) in `Lab-4d`. At the end of `5 min`, we'll do a class Q&A to ensure everyone understands the purpose of each file.
 
 ## Tasks
-1. Break up into groups and finish implementing the `load_review_file` function in `Files.jl`. The `load_review_file` function reads a text file and returns each line as an entry in a dictionary. 
-1. Load the `cv002_15918.txt` file in the positive reviews directory. 
-1. Analyze the word frequency for `cv002_15918.txt` (fill in the `runme.jl` script):
-    * Finish implementing the `compute_bag_of_words` function in the `Compute.jl` file. The `compute_bag_of_words` function returns a dictionary with the words as keys and the counts as values.
-    * Use the `frequency` function in the `Compute.jl` file to compute the frequency of word use. 
-1. Let's look at what words are important using the `maximum` function in `Compute.jl`
+1. Break up into groups and finish implementing the `readfiles` function in `Files.jl`, and any other associated functions that are called by `readfiles`.
+* The `readfiles` function reads an array of move review file names and returns a `Dict{Int, MyMoviewReviewDocumentModel}` where the key is the index of the review file and the value is a `MyMoviewReviewDocumentModel` object.
