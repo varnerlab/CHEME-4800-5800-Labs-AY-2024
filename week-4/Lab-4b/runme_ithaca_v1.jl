@@ -17,8 +17,8 @@ points_url_string = build("https://api.weather.gov", model);
 result_points = MyWeatherGridPointEndpointModel(points_url_string);
 
 # grab the forcast, and call api again -
-# forecast_url = result_points["properties"]["forecastHourly"];
+forecast_url = result_points["properties"]["forecastHourly"];
 
 # New Pattern: This makes it look we are calling a method on on object, but we are not.
 # We are calling the _api function that takes two arguments, the first is a type, and the second is a string.
-# result_forecast = MyWeatherForecastEndpointModel(forecast_url);
+result_forecast = MyWeatherForecastEndpointModel(forecast_url);
