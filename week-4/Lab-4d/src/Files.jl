@@ -18,15 +18,16 @@ function _readfile(path::String; delim=",")::MyMoviewReviewDocumentModel
     
     # main -
     open(path, "r") do io # open a stream to the file
-        for line ∉ eachline(io) # read each line from the stream
+        for line ∈ eachline(io) # read each line from the stream
         
             # build the record model by calling a build function -
             records[linecounter] = build(MyMoviewReviewRecordModel, line, delim=delim);
+            linecounter += 1; # increment the counter
         end
     end
 
     # return -
-    return build(MyMoviewReviewDocumenCorpusModel, records);
+    return build(MyMoviewReviewDocumentModel, records);
 end
 # --- PRIVATE METHODS ABOVE HERE ------------------------------------------------------------------------------------------------------------------- #
 
@@ -36,16 +37,16 @@ end
 
 Reads a collection of files from the paths, and returns a dictionary of `MyMoviewReviewDocumentModel` instances indexed by the file number.
 """
-function readfiles(paths::Array{String,1}; delim=" ", base::String="")::Array{Int, MyMoviewReviewDocumentModel}
+function readfiles(paths::Array{String,1}; delim=" ", base::String="")::Dict{Int, MyMoviewReviewDocumentModel}
    
     # initialize -
     list_of_positive_documents = Dict{Int64, MyMoviewReviewDocumentModel}();
 
     # process each file -
-    for i ∈ paths # iterate over the paths
+    for i ∈ eachindex(paths) # iterate over the paths
         filename = paths[i];
-        path_to_review_file = joinpaths(baseurl, filename)
-        list_of_positive_documents[i] = _readfiles(path_to_review_file, delim = delim);
+        path_to_review_file = joinpath(base, filename)
+        list_of_positive_documents[i] = _readfile(path_to_review_file, delim = delim);
     end
    
     # return -

@@ -21,12 +21,12 @@ function hashing_vectorizer(strings::Array{String,1};
     fill!(result, 0); # initialize the result with 0s
 
     # iterate through the strings, and compute the hash
-    for string ∈ eachindex(strings)
+    for string ∈ strings
         h = hash[string]; # returns the position of the string in the corpus
-        i = mod(h, -1*size); # compute the index
+        i = mod(h, size); # compute the index
         result[i] += 1; # increment the count
     end
 
     # return the result -
-    return results;
+    return result;
 end

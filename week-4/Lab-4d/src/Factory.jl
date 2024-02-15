@@ -14,7 +14,7 @@ function build(model::Type{MyMoviewReviewRecordModel}, line::String; delim::Stri
     tokenset = Set{String}(); # build an empty set
     cleaned_fields_data = Array{String,1}(); # build an empty array
     hash = Dict{String,Int64}();
-    record = MyMoviewReviewRecordCorposModel(); # build an empty model
+    record = MyMoviewReviewRecordModel(); # build an empty model
     
     # do NOT include puncuation in the tokens -
     puncuation_skip_set = Set{String}();
@@ -47,19 +47,19 @@ function build(model::Type{MyMoviewReviewRecordModel}, line::String; delim::Stri
     token_array = collect(tokenset) |> sort; # convert the set to an array, and sort it
     for i ∈ eachindex(token_array) # iterate over the tokens
         token = token_array[i]; # get the token
-        hashes[token] = j; # add the token to the dictionary
+        hash[token] = i; # add the token to the dictionary
     end
 
     # compute the inverse tokens -
     inverse = Dict{Int64,String}();
-    for (k,v) ∈ monkey # iterate over the tokens
-        inverse[q] = v; # add the token to the dictionary
+    for (k,v) ∈ hash # iterate over the tokens
+        inverse[v] = k; # add the token to the dictionary
     end
 
     # set the data on the model -
     record.tokenset = tokenset;
-    record.hashed = hash;
-    record.inverse = inversed;
+    record.hash = hash;
+    record.inverse = inverse;
     
     # return -
     return record;
@@ -112,43 +112,4 @@ function build(model::Type{MyMoviewReviewDocumentModel},
 
     # return -
     return document;
-end
-
-"""
-    build(model::Type{MyMoviewReviewDocumentCorpusModel}, records::Dict{Int64, MyMoviewReviewDocumentModel}) -> MyMoviewReviewDocumentCorpusModel
-
-Builds an instance of the `MyMoviewReviewDocumentCorpusModel` type from a dictionary of documents.
-
-### Arguments
-- `model::Type{MyMoviewReviewDocumentCorpusModel}`: The type of model to build, in this case `MyMoviewReviewDocumentCorpusModel`.
-- `records::Dict{Int64, MyMoviewReviewDocumentModel}`: A dictionary of documents to use for building the corpus.
-"""
-function build(model::Type{MyMoviewReviewDocumentCorpusModel}, 
-    records::Dict{Int64, MyMoviewReviewDocumentModel})::MyMoviewReviewDocumentCorpusModel
-    
-    # initialize -
-    corpus = MyMoviewReviewDocumentCorpusModel(); # build an empty corpus model
-    tokenset = Set{String}(); # build an empty set
-    corpus_tokens::Dict{String,Int64} = Dict{String,Int64}(); # build an empty dictionary
-
-    # first, set the records field on the corpus -
-    corpus.records = records;
-
-    # process each record, and build the overall list of tokens for this corpus -
-    for (_, document) ∈ records # iterate over the tokens in the records
-        for token ∈ document.tokenset # iterate over the tokens in the records
-            push!(tokenset, token); # add the token to the tokenset
-        end
-    end
-
-    # build an ordering for the tokens -
-    token_array = collect(tokenset) |> sort; # convert the set to an array, and sort it
-    for i ∈ eachindex(token_array) # iterate over the tokens
-        token = token_array[i]; # get the token
-        corpus_tokens[token] = i; # add the token to the corpus tokens
-    end
-    corpus.tokens = corpus_tokens; # set the data on the corpus
-
-    # return -
-    return corpus;
 end
