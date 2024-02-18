@@ -6,7 +6,7 @@ const _PATH_TO_NEGATIVE_REVIEWS = joinpath(_ROOT, "data", "reviews", "neg")
 
 # check: packages installed?
 using Pkg
-Pkg.activate("."); Pkg.resolve(); Pkg.instantiate(); Pkg.update();
+
 
 # load external packages -
 using Test
