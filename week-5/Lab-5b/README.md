@@ -8,6 +8,8 @@ __Fields__:
 * Field 2: The `reactants` field contains the reaction string, e.g., `C6H8O7+C21H29N7O17P3`
 * Field 3: The `products` field contains the reaction string, e.g., `C5H6O5+CO2+C21H30N7O17P3+H`
 
+The reaction strings can be found in the `data/Reactions.net` file.
+
 ## Tasks
 A coworker has provided you with a `CSV` file containing chemical reaction strings and some logic to parse these reactions in the `src/Parser.jl` file. However, while the parser logic is complete (i.e., it runs without errors), it needs to be better documented, seems overly complicated, and your team needs to understand the behavior better.
 
