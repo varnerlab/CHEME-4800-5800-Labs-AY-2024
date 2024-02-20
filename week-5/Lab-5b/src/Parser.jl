@@ -1,7 +1,8 @@
 """
-    _recursive_parser(q::Queue, s::Array{Char,1}, a::Array{String,1}; delim = ' ')
+    _recursive_descent_parser(q::Queue, tmp::Queue{Char}, a::Array{String,1}; 
+        delim = ' ')
 """
-function _recursive_reaction_parser(q::Queue, tmp::Queue{Char}, a::Array{String,1}; 
+function _recursive_descent_parser(q::Queue, tmp::Queue{Char}, a::Array{String,1}; 
     delim = ' ')
 
     # base case: we have no more characters in the character_arr - we are done
@@ -42,21 +43,20 @@ function _recursive_reaction_parser(q::Queue, tmp::Queue{Char}, a::Array{String,
         end
 
         # process the next character in the queue -
-        _recursive_reaction_parser(q, tmp, a; delim = delim);
+        _recursive_descent_parser(q, tmp, a; delim = delim);
     end
 end
 
 """
-    recursive_parser(string::String; delim::Char=' ') -> Dict{Int64,String}
+    recursivesplit(string::String; delim::Char=' ') -> Dict{Int64,String}
 """
-function recursive_reaction_parser(string::String; 
-    delim::Char=' ')::Dict{Int64,String}
+function recursivesplit(string::String; delim::Char=' ')::Dict{Int64,String}
 
     # initialize -
-    d = Dict{Int,String}()
-    tmp = Queue{Char}()
-    q = Queue{Char}()
-    a = Array{String,1}()
+    d = Dict{Int,String}();
+    tmp = Queue{Char}();
+    q = Queue{Char}();
+    a = Array{String,1}();
     counter = 0
 
     # build the Queue q that we are going to parse -
@@ -66,7 +66,7 @@ function recursive_reaction_parser(string::String;
     end
 
     # recursive descent -
-    _recursive_reaction_parser(q, tmp, a; delim = delim);
+    _recursive_descent_parser(q, tmp, a; delim = delim);
 
     # convert to dictionary for the output
     for item ∈ a

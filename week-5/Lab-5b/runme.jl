@@ -8,4 +8,4 @@ path_to_reactions_file = joinpath(_PATH_TO_DATA, "Reactions.net")
 reactions = read_reaction_file(path_to_reactions_file);
 
 # Step 3: Cut the reaction and product strings around the +'s (using recursive descent parser)
-d = recursive_reaction_parser(reactions["R00267"].products, delim='+');
+d = recursivesplit(reactions["R00405"].reactants, delim='+');
