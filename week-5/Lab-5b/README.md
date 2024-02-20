@@ -16,7 +16,7 @@ A coworker has provided you with a `CSV` file (`data/Reactions.net`) containing 
 Your task is to analyze the parser and explain its behavior to your coworkers. 
 
 1. __Duration 5 min__: Break into groups and familiarize yourself with the lab structure; what do all the files do?
-1. __Duration 20 min__: Analyze and discuss the behavior of the `recursivesplit` and `_recursive_descent_parser` functions in `src/Parser.jl` using a simple text inputs such as `Dog+Cat+Mouse+Lizard`. Run these simple cases using the `test_runme.jl` script.
+1. __Duration 20 min__: Analyze and discuss the behavior of the `recursivesplit` and `_recursive_descent_parser` functions in `src/Parser.jl` using simple text inputs such as `Dog+Cat+Mouse+Lizard`. Run these simple cases using the `test_runme.jl` script.
     * To see what the parser is doing, add `@show` statements to the `recursivesplit` and `_recursive_descent_parser` functions to print out values. Alternatively, use the `debugger` to step through the code (see initial demo).
 1. __Duration 15 min__: Finish the implementation of the `production_runme.jl` script to process the reaction strings.
     * The `production_runme.jl` script should load the `CSV` file, parse the reaction strings, and store the reaction information in a dictionary of `MyKeggReactionModel` objects (already implemented for you).
