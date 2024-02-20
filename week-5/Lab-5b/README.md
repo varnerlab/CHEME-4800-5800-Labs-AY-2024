@@ -11,7 +11,7 @@ __Fields__:
 The reaction strings can be found in the `data/Reactions.net` file.
 
 ## Tasks
-A coworker has provided you with a `CSV` file containing chemical reaction strings and some logic to parse these reactions in the `src/Parser.jl` file. However, while the parser logic is complete (i.e., it runs without errors), it needs to be better documented, seems overly complicated, and your team needs to understand the behavior better.
+A coworker has provided you with a `CSV` file (`data/Reactions.net`) containing chemical reaction strings and some logic to parse these reactions in the `src/Parser.jl` file. However, while the parser logic is complete (i.e., it runs without errors), it needs to be better documented, seems overly complicated, and your team needs to understand the behavior better.
 
 Your task is to analyze the parser and explain its behavior to your coworkers. 
 
