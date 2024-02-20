@@ -12,15 +12,15 @@ __Fields__:
 * Field 3: The `products` field contains the reaction string, e.g., `C5H6O5+CO2+C21H30N7O17P3+H`
 
 ### Tasks
-A coworker, has provided you with a `CSV` file containing chemical reaction strings, and some logic to parse these reactions in the `src/Parser.jl` file. However, while the parser logic is complete (i.e., it runs without errors), it is not well documented, seems overly complicated and the behavior is not well understood by anybody on your team.
+A coworker has provided you with a `CSV` file containing chemical reaction strings and some logic to parse these reactions in the `src/Parser.jl` file. However, while the parser logic is complete (i.e., it runs without errors), it needs to be better documented, seems overly complicated, and your team needs to understand the behavior better.
 
 Your task is to analyze the parser and explain its behavior to your coworkers. 
 
 1. __Duration 5 min__: Break into groups and familiarize yourself with the lab structure; what do all the files do?
-1. __Duration 20 min__: Analyze and discuss the behavior of the `recursivesplit` and `_recursive_descent_parser` functions in `src/Parser.jl` using a simple text inputs such as `Dog+Cat+Mouse+Lizard`. 
-    * To see what the parser is doing, you can add `@show` statements to the `recursivesplit` and `_recursive_descent_parser` functions to print out values. Alternatively, you can use the `debugger` to step through the code (see initial demo).
+1. __Duration 20 min__: Analyze and discuss the behavior of the `recursivesplit` and `_recursive_descent_parser` functions in `src/Parser.jl` using a simple text inputs such as `Dog+Cat+Mouse+Lizard`. Run these simple cases using the `test_runme.jl` script.
+    * To see what the parser is doing, add `@show` statements to the `recursivesplit` and `_recursive_descent_parser` functions to print out values. Alternatively, use the `debugger` to step through the code (see initial demo).
 1. __Duration 15 min__: Finish the implementation of the `production_runme.jl` script to process the reaction strings.
-    * The `production_runme.jl` script should load the `CSV` file, parse the reaction strings and store the reaction information in a dictionary of `MyKeggReactionModel` objects (already implemented for you).
-    * The `production_runme.jl` script should poulate a unique `Array` of chemical compound strings, called `species_formula_array`, and a unique `Array` of reaction names, called `reaction_name_array`.
-    * Challenge problem: The `production_runme.jl` script should also generate a $n \times m$ matrix, called `stoichiometry_matrix`, where $n$ is the number of unique chemical compound strings and $m$ is the number of reaction strings. The `stoichiometry_matrix` should contain the stoichiometry coefficients of the chemical compounds in the reaction strings.
-1. __Duration 10 min__: Can you feed reaction strings to the parser that will cause it to fail? If so, what are they? (create a copy of the `Reactions.net` file, and put test cases reactions in the new file).
+    * The `production_runme.jl` script should load the `CSV` file, parse the reaction strings, and store the reaction information in a dictionary of `MyKeggReactionModel` objects (already implemented for you).
+    * The `production_runme.jl` script should poulate a unique `Array` of chemical compound strings, called `species_formula_array`, and a unique `Array` of reaction names, called `reaction_name_array`. Write code to populate these arrays.
+    * Challenge problem: The `production_runme.jl` script should also generate a $n \times m$ matrix $\mathbf{S}$, called `stoichiometry_matrix`, where $n$ is the number of unique chemical compound strings and $m$ is the number of reaction strings. The `stoichiometry_matrix` should contain the stoichiometry coefficients, i.e., $s_{ij}\in\mathbf{S}$ should hold the stoichiometric coefficient for species $i$ in reaction $j$. 
+1. __Duration 10 min__: Can you feed reaction strings to the parser that will cause it to fail? If so, what are they? (Create a copy of the `Reactions.net` file, and put test case reactions in the new file.)
