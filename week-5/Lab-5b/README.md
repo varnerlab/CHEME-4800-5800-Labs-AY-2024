@@ -5,7 +5,7 @@ In particular, we'll load and process chemical reaction records of the form: `R0
 
 __Fields__:
 * Field 1: The `name` field contains an identifier for the reaction string, e.g., `R00267`
-* Field 2: The `reactants` field contains the reaction string, e.g., `C6H8O7+C21H29N7O17P3` where chemical compounds are seperrated by the `+` character.
+* Field 2: The `reactants` field contains the reaction string, e.g., `C6H8O7+C21H29N7O17P3`
 * Field 3: The `products` field contains the reaction string, e.g., `C5H6O5+CO2+C21H30N7O17P3+H`
 
 The reaction strings can be found in the `data/Reactions.net` file.
