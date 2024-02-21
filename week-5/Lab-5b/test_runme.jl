@@ -5,4 +5,4 @@ include("Include.jl");
 test_input_string = "Dog+Cat+Mouse+Lizard";
 
 # split the string -
-fragments = recursivesplit(test_input_string, delim='*');
+fragments = recursivesplit(test_input_string, delim='+');

@@ -8,10 +8,29 @@ path_to_reactions_file = joinpath(_PATH_TO_DATA, "Reactions.net")
 reactions = read_reaction_file(path_to_reactions_file);
 
 # TODO: Build the reaction_name_array -
-# ...
+reaction_name_array = Array{String,1}();
+for (name,model) in reactions
+    push!(reaction_name_array, model.name)
+end
+sort!(reaction_name_array); # we want to sort the array, so that we establish a consistent order. Notice the ! at the end of the function name.
 
 # TODO: Build the species_formula_array -
-# ...
+tmp = Set{String}();
+for (name,model) in reactions
+    d_reactants = recursivesplit(model.reactants, delim='+');
+    d_products = recursivesplit(model.products, delim='+');
+   
+    # process the reactants -
+    for (k,v) in d_reactants
+        push!(tmp, v)
+    end
+
+    # process the products -
+    for (k,v) in d_products
+        push!(tmp, v)
+    end
+end
+species_formula_array = tmp |> collect |> sort; # we want to sort the array, so that we establish a consistent order.
 
 # TODO: Challenge problem: build the stoichiometry_matrix
 # ...

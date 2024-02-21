@@ -2,8 +2,11 @@
     _recursive_descent_parser(q::Queue, tmp::Queue{Char}, a::Array{String,1}; 
         delim = ' ')::Nothing
 """
-function _recursive_descent_parser(q::Queue, tmp::Queue{Char}, a::Array{String,1}; 
-    delim = ' ')::Nothing
+function _recursive_descent_parser!(q::Queue, tmp::Queue{Char}, a::Array{String,1}; 
+    delim = ' ')
+    
+    # @show q,tmp,a
+    
     if (isempty(q) == true)
         if (isempty(tmp) == false)
             word = join(tmp)
@@ -23,7 +26,7 @@ function _recursive_descent_parser(q::Queue, tmp::Queue{Char}, a::Array{String,1
         else
             enqueue!(tmp, next_char)
         end
-        _recursive_descent_parser(q, tmp, a; delim = delim);
+        _recursive_descent_parser!(q, tmp, a; delim = delim);
     end
 end
 
@@ -43,7 +46,10 @@ function recursivesplit(string::String; delim::Char=' ')::Dict{Int64,String}
     for c ∈ character_arr
         enqueue!(q, c);
     end
-    _recursive_descent_parser(q, tmp, a; delim = delim);
+
+    # @show q
+
+    _recursive_descent_parser!(q, tmp, a; delim = delim);
     for item ∈ a
         d[counter] = item;
         counter += 1
