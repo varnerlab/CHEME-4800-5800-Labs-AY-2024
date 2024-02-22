@@ -10,14 +10,13 @@ A coworker has provided you with a simple two-dimensional cellular automata simu
     * To see what the simulation is doing, add `@show` statements to the `simulation(...)` function in the `src/Compute.jl` file to print out values.
     * How are the images being written to the `root/images` directory?
 
-1. __Duration 15 min__: Let's change the rules and observe the system's behavior.
-    * For example, input the rule:
-    ```julia
-        rule[1] = 1; # average 0.0 
-        rule[2] = 0; # average 0.25 
-        rule[3] = 0; # average 0.50 
-        rule[4] = 0; # average 0.75
-        rule[5] = 1; # average 1.0
-    ```
-   in the `sample.jl` script and run the `sample.jl` script with this rule. What do you observe? Pick some other rules and observe the behavior of the system.
-   * How many possible rules are there for this kind of system?
+1. __Duration 15 min__: Let's change the rules and observe the system's behavior. For example, input the rule:
+ ```julia
+     rule[1] = 1; # average 0.0 
+     rule[2] = 0; # average 0.25 
+     rule[3] = 0; # average 0.50 
+     rule[4] = 0; # average 0.75
+     rule[5] = 1; # average 1.0
+ ```
+in the `sample.jl` script and run the `sample.jl` script with this rule. What do you observe? Pick some other rules and observe the behavior of the system.
+* How many possible rules are there for this kind of system?
