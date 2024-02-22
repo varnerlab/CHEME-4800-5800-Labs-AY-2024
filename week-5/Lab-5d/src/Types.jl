@@ -4,7 +4,7 @@ abstract type AbstractGridWorldModel end
 mutable struct MyTwoDimensionalGridWorldRuleModel <: AbstractGridWorldRuleModel
     
     # data -
-    # ...
+    decision::Dict{UInt64, Int64};
 
     # constructor
     MyTwoDimensionalGridWorldRuleModel() = new()
