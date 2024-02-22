@@ -7,7 +7,8 @@ A coworker has provided you with a simple two-dimensional cellular automata simu
 
 1. __Duration 25 min__: Analyze and discuss the system's behavior by executing the `sample.jl` script.
     * The simulation output is stored in the `root/images` directory. Run the `sample.jl` script with the default rule. What do the images represent that are saved to the `root/images` directory?
-    * To see what the simulation is doing, add `@show` statements to the `simulation` function in the `src/Compute.jl` file to print out values. 
+    * To see what the simulation is doing, add `@show` statements to the `simulation(...)` function in the `src/Compute.jl` file to print out values.
+    * How are the images being written to the `root/images` directory?
 
 1. __Duration 15 min__: Let's change the rules and observe the system's behavior.
     * For example, input the rule:
