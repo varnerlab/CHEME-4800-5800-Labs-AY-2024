@@ -3,7 +3,7 @@ function build(modeltype::Type{MyTwoDimensionalGridWorldRuleModel},
 
     # build an empty object -
     model = MyTwoDimensionalGridWorldRuleModel();
-    steps = range(0.0, step = 0.2, stop = 1.0) |> collect;
+    steps = range(0.0, step = 0.25, stop = 1.0) |> collect;
 
     # set the rule -
     ruledict = Dict{UInt64,Int64}();

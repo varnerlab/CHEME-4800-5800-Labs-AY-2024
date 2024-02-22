@@ -9,10 +9,10 @@ reactions = read_reaction_file(path_to_reactions_file);
 
 # TODO: Build the reaction_name_array -
 reaction_name_array = Array{String,1}();
-for (name,model) in reactions
-    push!(reaction_name_array, model.name)
+for (k,v) ∈ reactions
+    push!(reaction_name_array, v.name)
 end
-sort!(reaction_name_array); # we want to sort the array, so that we establish a consistent order. Notice the ! at the end of the function name.
+sort!(reaction_name_array);
 
 # TODO: Build the species_formula_array -
 tmp = Set{String}();
