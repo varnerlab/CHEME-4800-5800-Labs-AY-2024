@@ -18,3 +18,15 @@ Engineering practice increasingly relies on computational tools and data analysi
 ### Week 3: Introduction to Control Flow, Collections and Iteration
 * [Lab 3b: Introduction to sorting algortihms using `for` loops](./week-3/Lab-3b/README.md)
 * [Lab 3d: Introduction to delimied file parsing operations for numerical and textual data](./week-3/Lab-3d/README.md)
+
+### Week 4: Introduction to APIs and Text Data
+* [Lab 4b: Working with APIs and JSON data](./week-4/Lab-4b/README.md)
+* [Lab 4d: Working with text data files. Movie reviews and sentiment analysis](./week-4/Lab-4d/README.md)
+
+### Week 5: Introduction to Recursion and Linear Data Structures
+* [Lab 5b: Recursive Parser of Chemical Formulas](./week-5/Lab-5b/README.md)
+* [Lab 5d: Two-Dimensional Cellular Automata Simulation (just for fun)](./week-5/Lab-5d/README.md)
+
+### Week 6: Introduction to Graphs and Trees
+* [Lab 6b: Break.](./week-6/Lab-6b/README.md)
+* [Lab 6d: Depth-First and Breadth-First Tree and Graph Traversal](./week-6/Lab-6d/README.md)
