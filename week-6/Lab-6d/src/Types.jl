@@ -1,22 +1,31 @@
 abstract type MyAbstractGraphModel end
+abstract type MyAbstractGraphNodeModel end
 
-mutable struct MySimpleUndirectedWeightedGraphModel <: MyAbstractGraphModel
+mutable struct MyGraphNodeModel <: MyAbstractGraphNodeModel
    
    # data -
-   vertices::Union{Nothing,Vector{Int}}
-   edges::Dictionay{Tuple{Int, Int}}
+   data::Float64
 
    # constructor -
-   MySimpleUndirectedWeightedGraphModel() = new();
-
+   MyGraphNodeModel() = new();
 end
 
-mutable struct MySimpleDirectedWeightedGraphModel <: MyAbstractGraphModel
+mutable struct MySimpleDirectedGraphModel <: MyAbstractGraphModel
    
    # data -
-   vertices::Vector{Int}
-   edges::Dictionary{Tuple{Int, Int}, Float64}
+   nodes::Union{Nothing, Dictionary{Int64, MyGraphNodeModel}}
+   edges::Union{Nothing, Dictionay{Tuple{Int, Int}, Float64}}
 
    # constructor -
-   MySimpleDirectedWeightedGraphModel() = new();
+   MySimpleDirectedGraphModel() = new();
 end
+
+mutable struct MySimpleUndirectedGraphModel <: MyAbstractGraphModel
+   
+    # data -
+    nodes::Union{Nothing, Dictionary{Int64, MyGraphNodeModel}}
+    edges::Union{Nothing, Dictionay{Tuple{Int, Int}, Float64}}
+ 
+    # constructor -
+    MySimpleUndirectedGraphModel() = new();
+ end

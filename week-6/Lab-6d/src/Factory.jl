@@ -1,18 +1,18 @@
 
 """
-    function build(model::Type{T}; 
-        verticies::Vector{Int64} = nothing, 
-        edges::Dictionary{Tuple{Int, Int}, Float64} = nothing) where T <: MyAbstractGraphModel
+    function build(model::Type{T}, data::Dict{String, Any}) where T <: MyAbstractGraphModel
 """
-function build(model::Type{T}; 
-    verticies::Vector{Int64} = nothing, 
-    edges::Dictionary{Tuple{Int, Int}, Float64} = nothing) where T <: MyAbstractGraphModel
+function build(model::Type{T}, data::Dict{String, Any}) where T <: MyAbstractGraphModel
 
     # build -
-    modelinstance = model();
-    modelinstance.vertices = verticies;
-    modelinstance.edges = edges;
+    graphmodel = model();
+ 
+    # build the nodes -
+    # ...
+
+    # build the edges -
+    # ...
 
     # return -
-    return modelinstance;
+    return graphmodel;
 end
