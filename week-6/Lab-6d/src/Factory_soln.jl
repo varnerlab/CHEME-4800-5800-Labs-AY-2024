@@ -11,14 +11,23 @@ function build(model::Type{T}, data::Array{Int64,2}) where T <: MyAbstractGraphM
     edges = Dict{Tuple{Int64, Int64}, Int64}();
     children = Dict{Int64, Set{Int64}}();
 
-    # TODO: populate the nodes dictionary
-    # ...
+    # build the nodes -
+    [nodes[i] = MyGraphNodeModel(i) for i in 0:number_of_nodes-1];
 
-    # TODO: populate the edges dictionary
-    # ...
+    # build the edges -
+    for i in 1:number_of_nodes
+        for j in 1:number_of_nodes
+            if data[i,j] != 0
+                edges[(i-1, j-1)] = data[i,j];
+            end
+        end
+    end
 
-    # TODO: populate the children dictionary
-    # ...
+    # compute the children -
+    for i ∈ 0:number_of_nodes-1
+        node = nodes[i];
+        children[i] = _children(edges, node.id);
+    end
 
     # add stuff to model -
     graphmodel.nodes = nodes;
