@@ -17,10 +17,12 @@ __Duration:__ 45 minutes: Finish implementing the `_compute_stoichiometric_matri
 ## Task 2: Visualize the reaction adjacency matrix for the E. coli core metabolic network
 Let's visualize the reaction adjacency matrix for the _E. coli_ core metabolic network. We'll do this together in class. 
 The reaction adjacency matrix $\mathbf{A}$ is computed from the binary stoichiometric matrix $\mathbf{B}$ as follows:
+
 $$
 \begin{equation}
 \mathbf{A} = \mathbf{B}^T\cdot\mathbf{B}
 \end{equation}
 $$
+
 The binary stoichiometric matrix $\mathbf{B}$ is computed from the stoichiometric matrix $\mathbf{S}$ where `B[i,j] = 1` if `S[i,j] != 0` and `B[i,j] = 0` otherwise. We've implemented the `binary_stoichiometric_matrix(matrix::Array{Float64,2})::Array{Int64,2}` method in the `src/Compute.jl` file to compute the binary stoichiometric matrix $\mathbf{B}$.
 * The `runme_task_2.jl` script computes $\mathbf{B}$, the reaction adjacency matrix $\mathbf{A}$, and visualizes the reaction adjacency matrix as an undirected graph. It saves a file called `EcoliNetwork.pdf` in the `root` directory.
