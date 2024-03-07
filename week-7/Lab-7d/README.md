@@ -24,5 +24,6 @@ $$
 \end{equation}
 $$
 
-The binary stoichiometric matrix $\mathbf{B}$ is computed from the stoichiometric matrix $\mathbf{S}$ where `B[i,j] = 1` if `S[i,j] != 0` and `B[i,j] = 0` otherwise. We've implemented the `binary_stoichiometric_matrix(matrix::Array{Float64,2})::Array{Int64,2}` method in the `src/Compute.jl` file to compute the binary stoichiometric matrix $\mathbf{B}$.
+The binary stoichiometric matrix $\mathbf{B}$ is computed from the stoichiometric matrix $\mathbf{S}$ where `B[i,j] = 1` if `S[i,j] != 0` and `B[i,j] = 0` otherwise. 
+* We've implemented the `binary_stoichiometric_matrix(matrix::Array{Float64,2})::Array{Int64,2}` method in the `src/Compute.jl` file to compute the binary stoichiometric matrix $\mathbf{B}$.
 * The `runme_task_2.jl` script computes $\mathbf{B}$, the reaction adjacency matrix $\mathbf{A}$, and visualizes the reaction adjacency matrix as an undirected graph. It saves a file called `EcoliNetwork.pdf` in the `root` directory.
