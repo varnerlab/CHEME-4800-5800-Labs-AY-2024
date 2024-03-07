@@ -37,5 +37,11 @@ include("Include.jl")
         @test biomass_reaction.stoichiometry["M_pyr_c"] == -2.8328;
         @test biomass_reaction.stoichiometry["M_nadh_c"] == 3.547;
         @test biomass_reaction.stoichiometry["M_nad_c"] == -3.547;
+
+        # add test for the stoichiometric matrix model -
+        S = build(MyStoichiometricMatrixModel, R);
+        @test typeof(S) == MyStoichiometricMatrixModel;
+        @test length(S.species) == 92;
+        @test length(S.reactions) == 95;
     end
 end

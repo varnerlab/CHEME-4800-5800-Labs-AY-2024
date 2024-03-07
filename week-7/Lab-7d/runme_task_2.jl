@@ -30,7 +30,7 @@ origin()
 background("grey10")
 sethue("orange")
 drawgraph(g, 
-    edgelabels = :none, edgecurvature=0, layout = stress,
+    edgelabels = :none, edgecurvature=0, layout = spring,
     vertexshapesizes = 0.1, 
     vertexfillcolors = (v) -> mod(v,2) == 0 && colorant"lightskyblue",
     edgestrokeweights=0.1);

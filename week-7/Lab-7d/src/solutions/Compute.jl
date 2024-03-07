@@ -48,11 +48,11 @@ function _compute_stoichiometric_matrix(reactions::Dict{Int64, MyChemicalReactio
     number_of_reactions = length(reactions);
     number_of_species = 0;
 
-    # loop over the reactions, store the names -
+    # loop over the reactions, store the names in the *same* order as the reaction file
     reactionnames = Array{String,1}();
-    for (_,model) ∈ reactions
-        push!(reactionnames, model.name); # store the name
-    end
+	for i ∈ 1:number_of_reactions
+		push!(reactionnames, reactions[i].name);
+	end
 
     # use the stoichiometry to build a species set, sort it -
     tmp_set = Set{String}();
