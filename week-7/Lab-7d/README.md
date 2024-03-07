@@ -6,7 +6,7 @@ In this lab, you will better implement a program to construct a stoichiometric m
 The `PDF` of the paper is available [here](orth-et-al-2010-reconstruction-and-use-of-microbial-metabolic-networks-the-core-escherichia-coli-metabolic-model-as-an.pdf)
 
 ## Preqrequisites
-In `L7c`, we built the stoichiometric matrix for a simple chemical reaction network (that implementation can be found [here](https://github.com/varnerlab/CHEME-4800-5800-Examples-AY-2024)). However, this implementation failed the `time machine test`. 
+In `L7c`, we built the stoichiometric matrix for a simple chemical reaction network (that implementation can be found [here](https://github.com/varnerlab/CHEME-4800-5800-Examples-AY-2024)). However, this implementation failed the `time machine test`:
 * The `time machine test` determines if a code base is well-structured and easy to maintain. The test is simple: I take the code base and put it in a time machine, then travel ten years into the future. When I arrive, I ask myself if I can understand the code base and make changes to it. If the answer is no, the code base fails the `time machine test.`
 
 ## Task 1: Build a better stoichiometric matrix generation program
