@@ -1,5 +1,5 @@
 # `Lab 7d`: Build a Better Stoichiometric Matrix Generation Program
-In this lab, you will better implement a program to construct a stoichiometric matrix system described in the paper:
+In this lab, you will better implement a program to construct a stoichiometric matrix for the chemical reaction system described in the paper:
 
 * [Orth JD, Fleming RM, Palsson BØ. Reconstruction and Use of Microbial Metabolic Networks: the Core Escherichia coli Metabolic Model as an Educational Guide. EcoSal Plus. 2010 Sep;4(1). doi: 10.1128/ecosalplus.10.2.1. PMID: 26443778.](https://pubmed.ncbi.nlm.nih.gov/26443778/)
 
