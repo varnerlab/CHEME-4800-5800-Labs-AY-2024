@@ -3,11 +3,11 @@ In this lab, you will better implement a program to construct a stoichiometric m
 
 * [Orth JD, Fleming RM, Palsson BØ. Reconstruction and Use of Microbial Metabolic Networks: the Core Escherichia coli Metabolic Model as an Educational Guide. EcoSal Plus. 2010 Sep;4(1). doi: 10.1128/ecosalplus.10.2.1. PMID: 26443778.](https://pubmed.ncbi.nlm.nih.gov/26443778/)
 
-The `PDF` of the paper is availabe [here](orth-et-al-2010-reconstruction-and-use-of-microbial-metabolic-networks-the-core-escherichia-coli-metabolic-model-as-an.pdf)
+The `PDF` of the paper is available [here](orth-et-al-2010-reconstruction-and-use-of-microbial-metabolic-networks-the-core-escherichia-coli-metabolic-model-as-an.pdf)
 
 ## Preqrequisites
 In `L7c`, we built the stoichiometric matrix for a simple chemical reaction network (that implementation can be found [here](https://github.com/varnerlab/CHEME-4800-5800-Examples-AY-2024)). However, it failed when I applied the `time machine test` to that code base. 
-* The `time machine test` is a simple test that I use to determine if a code base is well-structured and easy to maintain. The test is simple: I take the code base and put it in a time machine, then travel 10 years into the future. When I arrive, I ask myself if I can understand the code base and make changes to it. If the answer is no, the code base fails the `time machine test.`
+* The `time machine test` is a simple test that I use to determine if a code base is well-structured and easy to maintain. The test is simple: I take the code base and put it in a time machine, then travel ten years into the future. When I arrive, I ask myself if I can understand the code base and make changes to it. If the answer is no, the code base fails the `time machine test.`
 
 ## Task 1: Build a better stoichiometric matrix generation program
 __Duration:__ 45 minutes: Finish implementing the `_compute_stoichiometric_matrix` method in the `src/Compute.jl` class. 
