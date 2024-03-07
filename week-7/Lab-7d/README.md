@@ -14,7 +14,7 @@ __Duration:__ 45 minutes: Finish implementing the `_compute_stoichiometric_matri
 * The `_compute_stoichiometric_matrix` function takes the `reactions::Dict{Int64, MyChemicalReactionModel}` dictionary as an input and returns the stoichiometric matrix as an `Array{Float64,2}`, a list of chemical species names as an `Array{String,1}` and a list of reaction names as an `Array{String,1}`.
 * You can run the `testme_task_1.jl` script to check your implementation. The solution is provided in the `solutions` directory.
 
-## Task 2: Visualize the reaction adjacency matrix for the E. coli core metabolic network
+## Task 2: Visualize the reaction adjacency matrix for the _E. coli_ core metabolic network
 Let's visualize the reaction adjacency matrix for the _E. coli_ core metabolic network. We'll do this together in class. 
 The reaction adjacency matrix $\mathbf{A}$ is computed from the binary stoichiometric matrix $\mathbf{B}$ as follows:
 
