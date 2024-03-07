@@ -10,7 +10,7 @@ In `L7c`, we built the stoichiometric matrix for a simple chemical reaction netw
 * The `time machine test` determines if a code base is well-structured and easy to maintain. The test is simple: I take the code base and put it in a time machine, then travel ten years into the future. When I arrive, I ask myself if I can understand the code base and make changes to it. If the answer is no, the code base fails the `time machine test.`
 
 ## Task 1: Build a better stoichiometric matrix generation program
-__Duration:__ 45 minutes: Finish implementing the `_compute_stoichiometric_matrix` method in the `src/Compute.jl` class. 
+__Duration:__ 45 minutes: Finish implementing the `_compute_stoichiometric_matrix` method in the `src/Compute.jl` file. 
 * The `_compute_stoichiometric_matrix` function takes the `reactions::Dict{Int64, MyChemicalReactionModel}` dictionary as an input and returns the stoichiometric matrix as an `Array{Float64,2}`, a list of chemical species names as an `Array{String,1}` and a list of reaction names as an `Array{String,1}`.
 * You can run the `testme_task_1.jl` script to check your implementation. The solution is provided in the `solutions` directory.
 
