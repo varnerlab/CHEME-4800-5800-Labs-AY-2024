@@ -16,7 +16,7 @@ __Duration:__ 45 minutes: Finish implementing the `_compute_stoichiometric_matri
 
 ## Task 2: Visualize the reaction adjacency matrix for the _E. coli_ core metabolic network
 Let's visualize the reaction adjacency matrix for the _E. coli_ core metabolic network. We'll do this together in class. 
-The reaction adjacency matrix $\mathbf{A}$ is computed from the binary stoichiometric matrix $\mathbf{B}$ as follows:
+The reaction adjacency matrix $\mathbf{A}$ is computed from the binary stoichiometric matrix $\mathbf{B}$:
 
 $$
 \begin{equation}
