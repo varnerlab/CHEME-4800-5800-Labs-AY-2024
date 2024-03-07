@@ -1,0 +1,328 @@
+// ----------------------------------------------------------------------------------- //
+// Copyright (c) 2018 Varnerlab
+// Robert Frederick Smith School of Chemical and Biomolecular Engineering
+// Cornell University, Ithaca NY 14850
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+// ----------------------------------------------------------------------------------- //
+
+// ----------------------------------------------------------------------------------- //
+// metabolic reactions -
+// #pragma::metabolism_handler
+//
+// Record:
+// name (unique),type_flag,catalyst,reactants,reversible,forward,ec_number
+//
+// Notes:
+// [] = system (not tracked)
+// ----------------------------------------------------------------------------------- //
+
+// R_ACALD::acetaldehyde dehydrogenase (acetylating)
+R_ACALD,0,[],M_acald_c+M_coa_c+M_nad_c,M_accoa_c+M_h_c+M_nadh_c,true,[]
+
+// R_ACKr::acetate kinase
+R_ACKr,0,[],M_ac_c+M_atp_c,M_actp_c+M_adp_c,true,[]
+
+// R_ACONTa::aconitase (half-reaction A, Citrate hydro-lyase)
+R_ACONTa,0,[],M_cit_c,M_acon_c+M_h2o_c,true,[]
+
+// R_ACONTb::aconitase (half-reaction B, Isocitrate hydro-lyase)
+R_ACONTb,0,[],M_acon_c+M_h2o_c,M_icit_c,true,[]
+
+// R_ADK1::adenylate kinase
+R_ADK1,0,[],M_amp_c+M_atp_c,2.0*M_adp_c,true,[]
+
+// R_AKGDH::2-Oxoglutarate dehydrogenase
+R_AKGDH,0,[],M_akg_c+M_coa_c+M_nad_c,M_co2_c+M_nadh_c+M_succoa_c,false,[]
+
+// R_AKGt2r::2-oxoglutarate reversible transport via symport
+R_AKGt2r,0,[],M_akg_e+M_h_e,M_akg_c+M_h_c,true,[]
+
+// R_ALCD2x::alcohol dehydrogenase (ethanol)
+R_ALCD2x,0,[],M_etoh_c+M_nad_c,M_acald_c+M_h_c+M_nadh_c,true,[]
+
+// R_ATPM::ATP maintenance requirement
+R_ATPM,0,[],M_atp_c+M_h2o_c,M_adp_c+M_h_c+M_pi_c,true,[]
+
+// R_ATPS4r::ATP synthase (four protons for one ATP)
+R_ATPS4r,0,[],M_adp_c+4.0*M_h_e+M_pi_c,M_atp_c+M_h2o_c+3.0*M_h_c,true,[]
+
+// R_CS::citrate synthase
+R_CS,0,[],M_accoa_c+M_h2o_c+M_oaa_c,M_cit_c+M_coa_c+M_h_c,false,[]
+
+// R_CYTBD::cytochrome oxidase bd (ubiquinol-8: 2 protons)
+R_CYTBD,0,[],2.0*M_h_c+0.5*M_o2_c+M_q8h2_c,M_h2o_c+2.0*M_h_e+M_q8_c,false,[]
+
+// R_ENO::enolase
+R_ENO,0,[],M_2pg_c,M_h2o_c+M_pep_c,true,[]
+
+// R_FBA::fructose-bisphosphate aldolase
+R_FBA,0,[],M_fdp_c,M_dhap_c+M_g3p_c,true,[]
+
+// R_FBP::fructose-bisphosphatase
+R_FBP,0,[],M_fdp_c+M_h2o_c,M_f6p_c+M_pi_c,false,[]
+
+// R_FORt2::formate transport via proton symport (uptake only)
+R_FORt2,0,[],M_for_e+M_h_e,M_for_c+M_h_c,false,[]
+
+// R_FORti::formate transport via diffusion
+R_FORti,0,[],M_for_c,M_for_e,false,[]
+
+// R_FRD7::fumarate reductase
+R_FRD7,0,[],M_fum_c+M_q8h2_c,M_q8_c+M_succ_c,false,[]
+
+// R_FRUpts2::Fructose transport via PEP:Pyr PTS (f6p generating)
+R_FRUpts2,0,[],M_fru_e+M_pep_c,M_f6p_c+M_pyr_c,false,[]
+
+// R_FUM::fumarase
+R_FUM,0,[],M_fum_c+M_h2o_c,M_mal_L_c,true,[]
+
+// R_FUMt2_2::Fumarate transport via proton symport (2 H)
+R_FUMt2_2,0,[],M_fum_e+2.0*M_h_e,M_fum_c+2.0*M_h_c,false,[]
+
+// R_G6PDH2r::glucose 6-phosphate dehydrogenase
+R_G6PDH2r,0,[],M_g6p_c+M_nadp_c,M_6pgl_c+M_h_c+M_nadph_c,true,[]
+
+// R_GAPD::glyceraldehyde-3-phosphate dehydrogenase
+R_GAPD,0,[],M_g3p_c+M_nad_c+M_pi_c,M_13dpg_c+M_h_c+M_nadh_c,true,[]
+
+// R_GLCpts::D-glucose transport via PEP:Pyr PTS
+R_GLCpts,0,[],M_glc_D_e+M_pep_c,M_g6p_c+M_pyr_c,false,[]
+
+// R_GLNS::glutamine synthetase
+R_GLNS,0,[],M_atp_c+M_glu_L_c+M_nh4_c,M_adp_c+M_gln_L_c+M_h_c+M_pi_c,false,[]
+
+// R_GLNabc::L-glutamine transport via ABC system
+R_GLNabc,0,[],M_atp_c+M_gln_L_e+M_h2o_c,M_adp_c+M_gln_L_c+M_h_c+M_pi_c,false,[]
+
+// R_GLUDy::glutamate dehydrogenase (NADP)
+R_GLUDy,0,[],M_glu_L_c+M_h2o_c+M_nadp_c,M_akg_c+M_h_c+M_nadph_c+M_nh4_c,true,[]
+
+// R_GLUN::glutaminase
+R_GLUN,0,[],M_gln_L_c+M_h2o_c,M_glu_L_c+M_nh4_c,false,[]
+
+// R_GLUSy::glutamate synthase (NADPH)
+R_GLUSy,0,[],M_akg_c+M_gln_L_c+M_h_c+M_nadph_c,2.0*M_glu_L_c+M_nadp_c,false,[]
+
+// R_GLUt2r::L-glutamate transport via proton symport, reversible (periplasm)
+R_GLUt2r,0,[],M_glu_L_e+M_h_e,M_glu_L_c+M_h_c,true,[]
+
+// R_GND::phosphogluconate dehydrogenase
+R_GND,0,[],M_6pgc_c+M_nadp_c,M_co2_c+M_nadph_c+M_ru5p_D_c,false,[]
+
+// R_ICDHyr::isocitrate dehydrogenase (NADP)
+R_ICDHyr,0,[],M_icit_c+M_nadp_c,M_akg_c+M_co2_c+M_nadph_c,true,[]
+
+// R_ICL::Isocitrate lyase
+R_ICL,0,[],M_icit_c,M_glx_c+M_succ_c,false,[]
+
+// R_LDH_D::D lactate dehydrogenase
+R_LDH_D,0,[],M_lac_D_c+M_nad_c,M_h_c+M_nadh_c+M_pyr_c,true,[]
+
+// R_MALS::malate synthase
+R_MALS,0,[],M_accoa_c+M_glx_c+M_h2o_c,M_coa_c+M_h_c+M_mal_L_c,false,[]
+
+// R_MDH::malate dehydrogenase
+R_MDH,0,[],M_mal_L_c+M_nad_c,M_h_c+M_nadh_c+M_oaa_c,true,[]
+
+// R_ME1::malic enzyme (NAD)
+R_ME1,0,[],M_mal_L_c+M_nad_c,M_co2_c+M_nadh_c+M_pyr_c,false,[]
+
+// R_ME2::malic enzyme (NADP)
+R_ME2,0,[],M_mal_L_c+M_nadp_c,M_co2_c+M_nadph_c+M_pyr_c,false,[]
+
+// R_NADH16::NADH dehydrogenase (ubiquinone-8 & 3 protons)
+R_NADH16,0,[],4.0*M_h_c+M_nadh_c+M_q8_c,3.0*M_h_e+M_nad_c+M_q8h2_c,false,[]
+
+// R_NADTRHD::NAD transhydrogenase
+R_NADTRHD,0,[],M_nad_c+M_nadph_c,M_nadh_c+M_nadp_c,false,[]
+
+// R_PDH::pyruvate dehydrogenase
+R_PDH,0,[],M_coa_c+M_nad_c+M_pyr_c,M_accoa_c+M_co2_c+M_nadh_c,false,[]
+
+// R_PFK::phosphofructokinase
+R_PFK,0,[],M_atp_c+M_f6p_c,M_adp_c+M_fdp_c+M_h_c,false,[]
+
+// R_PFL::pyruvate formate lyase
+R_PFL,0,[],M_coa_c+M_pyr_c,M_accoa_c+M_for_c,false,[]
+
+// R_PGI::glucose-6-phosphate isomerase
+R_PGI,0,[],M_g6p_c,M_f6p_c,true,[]
+
+// R_PGK::phosphoglycerate kinase
+R_PGK,0,[],M_3pg_c+M_atp_c,M_13dpg_c+M_adp_c,true,[]
+
+// R_PGL::6-phosphogluconolactonase
+R_PGL,0,[],M_6pgl_c+M_h2o_c,M_6pgc_c+M_h_c,false,[]
+
+// R_PGM::phosphoglycerate mutase
+R_PGM,0,[],M_2pg_c,M_3pg_c,true,[]
+
+// R_PPC::phosphoenolpyruvate carboxylase
+R_PPC,0,[],M_co2_c+M_h2o_c+M_pep_c,M_h_c+M_oaa_c+M_pi_c,false,[]
+
+// R_PPCK::phosphoenolpyruvate carboxykinase
+R_PPCK,0,[],M_atp_c+M_oaa_c,M_adp_c+M_co2_c+M_pep_c,false,[]
+
+// R_PPS::phosphoenolpyruvate synthase
+R_PPS,0,[],M_atp_c+M_h2o_c+M_pyr_c,M_amp_c+2.0*M_h_c+M_pep_c+M_pi_c,false,[]
+
+// R_PTAr::phosphotransacetylase
+R_PTAr,0,[],M_accoa_c+M_pi_c,M_actp_c+M_coa_c,true,[]
+
+// R_PYK::pyruvate kinase
+R_PYK,0,[],M_adp_c+M_h_c+M_pep_c,M_atp_c+M_pyr_c,false,[]
+
+// R_PYRt2r::pyruvate reversible transport via proton symport
+R_PYRt2r,0,[],M_h_e+M_pyr_e,M_h_c+M_pyr_c,true,[]
+
+// R_RPE::ribulose 5-phosphate 3-epimerase
+R_RPE,0,[],M_ru5p_D_c,M_xu5p_D_c,true,[]
+
+// R_RPI::ribose-5-phosphate isomerase
+R_RPI,0,[],M_r5p_c,M_ru5p_D_c,true,[]
+
+// R_SUCDi::succinate dehydrogenase (irreversible)
+R_SUCDi,0,[],M_q8_c+M_succ_c,M_fum_c+M_q8h2_c,false,[]
+
+// R_SUCOAS::succinyl-CoA synthetase (ADP-forming)
+R_SUCOAS,0,[],M_atp_c+M_coa_c+M_succ_c,M_adp_c+M_pi_c+M_succoa_c,true,[]
+
+// R_TALA::transaldolase
+R_TALA,0,[],M_g3p_c+M_s7p_c,M_e4p_c+M_f6p_c,true,[]
+
+// R_THD2::NAD(P) transhydrogenase
+R_THD2,0,[],2.0*M_h_e+M_nadh_c+M_nadp_c,2.0*M_h_c+M_nad_c+M_nadph_c,false,[]
+
+// R_TKT1::transketolase
+R_TKT1,0,[],M_r5p_c+M_xu5p_D_c,M_g3p_c+M_s7p_c,true,[]
+
+// R_TKT2::transketolase
+R_TKT2,0,[],M_e4p_c+M_xu5p_D_c,M_f6p_c+M_g3p_c,true,[]
+
+// R_TPI::triose-phosphate isomerase
+R_TPI,0,[],M_dhap_c,M_g3p_c,true,[]
+
+// ---------------------------------------------------------------------------- //
+// TRANSPORT REACTIONS -
+
+// R_NH4t::ammonia reversible transport
+R_NH4t,0,[],M_nh4_e,M_nh4_c,true,[]
+
+// R_O2t::o2 transport via diffusion
+R_O2t,0,[],M_o2_e,M_o2_c,true,[]
+
+// R_CO2t::CO2 transporter via diffusion
+R_CO2t,0,[],M_co2_e,M_co2_c,true,[]
+
+// R_PIt2r::phosphate reversible transport via proton symport
+R_PIt2r,0,[],M_h_e+M_pi_e,M_h_c+M_pi_c,true,[]
+
+// R_MALt2_2::Malate transport via proton symport (2 H)
+R_MALt2_2,0,[],2.0*M_h_e+M_mal_L_e,2.0*M_h_c+M_mal_L_c,false,[]
+
+// R_SUCCt2_2::succinate transport via proton symport (2 H)
+R_SUCCt2_2,0,[],2.0*M_h_e+M_succ_e,2.0*M_h_c+M_succ_c,false,[]
+
+// R_SUCCt3::succinate transport out via proton antiport
+R_SUCCt3,0,[],M_h_e+M_succ_c,M_h_c+M_succ_e,false,[]
+
+// R_H2Ot::H2O transport via diffusion
+R_H2Ot,0,[],M_h2o_e,M_h2o_c,true,[]
+
+// R_ACALDt::acetaldehyde reversible transport
+R_ACALDt,0,[],M_acald_e,M_acald_c,true,[]
+
+// R_ACt2r::acetate reversible transport via proton symport
+R_ACt2r,0,[],M_ac_e+M_h_e,M_ac_c+M_h_c,true,[]
+
+// R_D_LACt2::D-lactate transport via proton symport
+R_D_LACt2,0,[],M_h_e+M_lac_D_e,M_h_c+M_lac_D_c,true,[]
+
+// R_ETOHt2r::ethanol reversible transport via proton symport
+R_ETOHt2r,0,[],M_etoh_e+M_h_e,M_etoh_c+M_h_c,true,[]
+// ---------------------------------------------------------------------------- //
+
+// ---------------------------------------------------------------------------- //
+// EXCHANGE REACTIONS -
+
+// R_EX_ac_e::Acetate exchange
+R_EX_ac_e,0,[],M_ac_e,M_ac_b,false,[]
+
+// R_EX_acald_e::Acetaldehyde exchange
+R_EX_acald_e,0,[],M_acald_e,M_acald_b,false,[]
+
+// R_EX_akg_e::2-Oxoglutarate exchange
+R_EX_akg_e,0,[],M_akg_e,M_akg_b,false,[]
+
+// R_EX_co2_e::CO2 exchange
+R_EX_co2_e,0,[],M_co2_e,M_co2_b,true,[]
+
+// R_EX_etoh_e::Ethanol exchange
+R_EX_etoh_e,0,[],M_etoh_e,M_etoh_b,false,[]
+
+// R_EX_for_e::Formate exchange
+R_EX_for_e,0,[],M_for_e,M_for_b,false,[]
+
+// R_EX_fru_e::D-Fructose exchange
+R_EX_fru_e,0,[],M_fru_e,M_fru_b,false,[]
+
+// R_EX_fum_e::Fumarate exchange
+R_EX_fum_e,0,[],M_fum_e,M_fum_b,false,[]
+
+// R_EX_glc_e::D-Glucose exchange
+R_EX_glc_e,0,[],M_glc_D_e,M_glc_D_b,true,[]
+
+// R_EX_gln_L_e::L-Glutamine exchange
+R_EX_gln_L_e,0,[],M_gln_L_e,M_gln_L_b,false,[]
+
+// R_EX_glu_L_e::L-Glutamate exchange
+R_EX_glu_L_e,0,[],M_glu_L_e,M_glu_L_b,false,[]
+
+// R_EX_h_e::H+ exchange
+R_EX_h_e,0,[],M_h_e,M_h2o_b,true,[]
+
+// R_EX_h2o_e::H2O exchange
+R_EX_h2o_e,0,[],M_h2o_e,M_h_b,true,[]
+
+// R_EX_lac_D_e::D-Lactate exchange
+R_EX_lac_D_e,0,[],M_lac_D_e,M_lac_D_b,false,[]
+
+// R_EX_mal_L_e::L-Malate exchange
+R_EX_mal_L_e,0,[],M_mal_L_e,M_mal_L_b,false,[]
+
+// R_EX_nh4_e::Ammonium exchange
+R_EX_nh4_e,0,[],M_nh4_e,M_nh4_b,true,[]
+
+// R_EX_o2_e::O2 exchange
+R_EX_o2_e,0,[],M_o2_e,M_o2_b,true,[]
+
+// R_EX_pi_e::Phosphate exchange
+R_EX_pi_e,0,[],M_pi_e,M_pi_b,true,[]
+
+// R_EX_pyr_e::Pyruvate exchange
+R_EX_pyr_e,0,[],M_pyr_e,M_pyr_b,false,[]
+
+// R_EX_succ_e::Succinate exchange
+R_EX_succ_e,0,[],M_succ_e,M_succ_b,false,[]
+// ---------------------------------------------------------------------------- //
+
+
+// R_Biomass_Ecoli_core_w_GAM::Biomass Objective Function with GAM
+R_Biomass_Ecoli_core_w_GAM,0,[],1.496*M_3pg_c+3.7478*M_accoa_c+59.81*M_atp_c+0.361*M_e4p_c+0.0709*M_f6p_c+0.129*M_g3p_c+0.205*M_g6p_c+0.2557*M_gln_L_c+4.9414*M_glu_L_c+59.81*M_h2o_c+3.547*M_nad_c+13.0279*M_nadph_c+1.7867*M_oaa_c+0.5191*M_pep_c+2.8328*M_pyr_c+0.8977*M_r5p_c,59.81*M_adp_c+4.1182*M_akg_c+3.7478*M_coa_c+59.81*M_h_c+3.547*M_nadh_c+13.0279*M_nadp_c+59.81*M_pi_c,false,[]

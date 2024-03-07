@@ -1,0 +1,1 @@
+We worked on the [solution to Problem set 2 in Lab 7b](https://github.com/varnerlab/PS2-CHEME-4800-5800-TEMPLATE-AY-2024-SOLN.git). 
