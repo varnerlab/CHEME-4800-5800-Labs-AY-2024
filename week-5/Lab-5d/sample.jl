@@ -12,11 +12,11 @@ randomcutoff = -0.1; # no noise if negative
 
 # build a rule -
 rule = Dict{Int64,Int64}();
-rule[1] = 1; # average 0.0 
-rule[2] = 0; # average 0.25 
-rule[3] = 1; # average 0.50 
-rule[4] = 0; # average 0.75
-rule[5] = 1; # average 1.0
+rule[1] = 1; # 1 average 0.0 
+rule[2] = 0; # 2 average 0.25 
+rule[3] = 1; # 3 average 0.50 
+rule[4] = 0; # 4 average 0.75
+rule[5] = 1; # 5 average 1.0
 rulemodel = build(MyTwoDimensionalGridWorldRuleModel, rule);
 
 # let's build a world, and set the initial state -
