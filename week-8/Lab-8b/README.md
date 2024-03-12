@@ -9,19 +9,16 @@ $$
 \dot{\mathbf{N}}\cdot{\mathbf{d}} + \mathbf{S}\cdot\dot{\mathbf{\epsilon}} = \mathbf{0}
 \end{equation}
 $$
-
 The matrix $\dot{\mathbf{N}}\in\mathbb{R}^{\mathcal{M}\times\mathcal{S}}$ is the species flow matrix, 
 $\mathbf{d}\in\mathbb{R}^{\mathcal{S}\times{1}}$ is the stream direction vector,
 $\mathbf{S}\in\mathbb{R}^{\mathcal{M}\times\mathcal{R}}$ is the stoichiometric matrix, 
 and $\dot{\mathbf{\epsilon}}\in\mathbb{R}^{\mathcal{R}\times{1}}$ is the open reaction extent vector.
 The open species mole balances can also be written in index form as:
-
 $$
 \begin{equation}
 \sum_{s\in\mathcal{S}}d_{s}\dot{n}_{is} + \sum_{j\in\mathcal{R}}\sigma_{ij}\dot{\epsilon}_{j} = 0\qquad{i=1,2,\dots,\mathcal{M}}
 \end{equation}
 $$
-
 where $\dot{n}_{is}$ is the mole flow rate of species $i$ in stream $s$, $d_{s}$ is the direction of stream $s$,
 $\sigma_{ij}$ is the stoichiometric coefficient for species $i$ in reaction $j$, and $\dot{\epsilon}_{j}$ is the open extent of reaction $j$.
 
@@ -36,15 +33,12 @@ __Duration 20 min__: Use your `Lab 7d` implementation to compute the stoichiomet
 __Duration 20 min__: Assume that we have three streams in the system, stream 1, stream 2, and stream 3. All species can be transported in all streams. 
 No reaction occurs in the streams.
 Streams 1 and 2 enter the reactor, and stream 3 exits the reactor. Show that in the abssence of information about the reaction extents, or the input or output stream mole flows, the steady-state species mole balances can be written as:
-
 $$
 \begin{equation}
 \mathbf{A}\cdot\mathbf{x} = \mathbf{0}
 \end{equation}
 $$
-
 where $\mathbf{A}\in\mathbb{R}^{\mathcal{7}\times\mathcal{24}}$ is the system matrix, and $\mathbf{x}\in\mathbb{R}^{\mathcal{24}\times{1}}$ is the vector of unknowns. To see this, run the `runme_task_2.jl` script to setup the system matrix $\mathbf{A}$ as the block system:
-
 $$
 \begin{equation}
 \mathbf{A} = \begin{bmatrix}
@@ -52,7 +46,6 @@ $$
 \end{bmatrix}
 \end{equation}
 $$
-
 where $\mathbf{S}$ is the stoichiometric matrix, and $\mathbf{D}_{1}$, $\mathbf{D}_{2}$, and $\mathbf{D}_{3}$ are diagonal matrices that represent the stream direction vectors for streams 1, 2, and 3, respectively.
 
 ### Dicussion
