@@ -1,8 +1,5 @@
- Lab 8b: Iterative Solution of a System of Species Mole Balances
-This lab will familiarize students with the iterative solution of a system of steady-state species mole balances for a well-mixed isothermal reaction operation. 
-
-### Background
-The steady-state open species mole balances for a well-mixed system with species set $\mathcal{M}$, 
+# Lab 8b: Iterative Solution of a System of Species Mole Balances
+This lab will familiarize students with the iterative solution of a system of steady-state species mole balances for a well-mixed isothermal reaction operation. The steady-state open species mole balances for a well-mixed system with species set $\mathcal{M}$, 
 reaction set $\mathcal{R}$, and stream set $\mathcal{S}$ is described by:
 
 $$
@@ -55,6 +52,6 @@ where $\mathbf{S}$ is the stoichiometric matrix, and $\mathbf{D}_{1}$, $\mathbf{
 ## Task 3 (preview of problem set 3): Let's put some numbers in and see what happens.
 __Duration 10 min__: Assume that the system has three streams: stream 1, stream 2, and stream 3. All species can be transported in all streams.
 Further, we've measured some stream mole flows and want to compute the remaining unknown values (extents and missing mole flows). How do we set up the system matrix $\mathbf{A}$, the vector of unknowns $\mathbf{x}$, and the right-hand side vector $\mathbf{b}$? We've implemented some scenarios in the `runme_task_3.jl` script.
-* _Case 1_: Assume we've measured all the inputs and want to estimate the reaction extents and the outputs. How do we set up the system matrix $\mathbf{A}$, the vector of unknowns $\mathbf{x}$, and the right-hand side vector $\mathbf{b}$? (and will the system be solvable?)
-* _Case 2_: Assume we've measured all the inputs and some output streams. How do we set up the system matrix $\mathbf{A}$, the vector of unknowns $\mathbf{x}$, and the right-hand side vector $\mathbf{b}$? (and will the system be solvable?). 
+* __Case 1__: Assume we've measured all the inputs and want to estimate the reaction extents and the outputs. How do we set up the system matrix $\mathbf{A}$, the vector of unknowns $\mathbf{x}$, and the right-hand side vector $\mathbf{b}$? (and will the system be solvable?)
+* __Case 2__: Assume we've measured all the inputs and some output streams. How do we set up the system matrix $\mathbf{A}$, the vector of unknowns $\mathbf{x}$, and the right-hand side vector $\mathbf{b}$? (and will the system be solvable?). 
     * Enter some numbers into the measurement vector `ndot_measured` and see if the system is solvable using one of our favorite linear algebra solvers.
