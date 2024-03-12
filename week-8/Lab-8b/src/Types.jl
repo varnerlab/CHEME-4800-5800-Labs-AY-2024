@@ -38,3 +38,17 @@ mutable struct MyStoichiometricMatrixModel <: AbstractConnectivityMatrixType
     # constructor
     MyStoichiometricMatrixModel() = new()
 end
+
+
+# let's create two "tag" types -
+struct MyJacobiMethod <: AbstractLinearSolverType
+    MyJacobiMethod() = new();
+end
+
+struct MyGaussSeidelMethod <: AbstractLinearSolverType
+    MyGaussSeidelMethod() = new();
+end
+
+struct MyGaussianEliminationMethod <: AbstractLinearSolverType
+    MyGaussianEliminationMethod() = new();
+end

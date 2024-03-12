@@ -1,0 +1,67 @@
+# Lab 8b: Iterative Solution of a System of Species Mole Balances
+This lab will familiarize students with the iterative solution of a system of steady-state species mole balances for a well-mixed isothermal reaction operation. 
+
+### Background
+The steady-state open species mole balances for a well-mixed system with species set $\mathcal{M}$, 
+reaction set $\mathcal{R}$, and stream set $\mathcal{S}$ is described by:
+$$
+\begin{equation}
+\dot{\mathbf{N}}\cdot{\mathbf{d}} + \mathbf{S}\cdot\dot{\mathbf{\epsilon}} = \mathbf{0}
+\end{equation}
+$$
+
+The matrix $\dot{\mathbf{N}}\in\mathbb{R}^{\mathcal{M}\times\mathcal{S}}$ is the species flow matrix, 
+$\mathbf{d}\in\mathbb{R}^{\mathcal{S}\times{1}}$ is the stream direction vector,
+$\mathbf{S}\in\mathbb{R}^{\mathcal{M}\times\mathcal{R}}$ is the stoichiometric matrix, 
+and $\dot{\mathbf{\epsilon}}\in\mathbb{R}^{\mathcal{R}\times{1}}$ is the open reaction extent vector.
+The open species mole balances can also be written in index form as:
+
+$$
+\begin{equation}
+\sum_{s\in\mathcal{S}}d_{s}\dot{n}_{is} + \sum_{j\in\mathcal{R}}\sigma_{ij}\dot{\epsilon}_{j} = 0\qquad{i=1,2,\dots,\mathcal{M}}
+\end{equation}
+$$
+
+where $\dot{n}_{is}$ is the mole flow rate of species $i$ in stream $s$, $d_{s}$ is the direction of stream $s$,
+$\sigma_{ij}$ is the stoichiometric coefficient for species $i$ in reaction $j$, and $\dot{\epsilon}_{j}$ is the open extent of reaction $j$.
+
+## Task 1: Compute the stoichiometric matrix $\mathbf{S}$
+__Duration 20 min__: Use your `Lab 7d` implementation to compute the stoichiometric matrix $\mathbf{S}$ for the reactions encoded in the [Toy.net](/data/Toy.net) file.
+* Implement the `readreactionfile` function in `src/Files.jl` to read the reaction file and return the reaction dictionary `R`, whose keys are the line number from [Toy.net](/data/Toy.net)   the list of `MyChemicalReactionModel` objects. 
+* Implement the `build` method for the `MyStoichiometricMatrixModel` type in `src/Factory.jl` to build the stoichiometric matrix $\mathbf{S}$ from the reaction dictionary `R`. 
+* Execute the `testme_task_1.jl` script to test your implementation `Lab 7d` implementation. This will read the reaction file and compute the stoichiometric matrix $\mathbf{S}$.
+* The `runme_task_1.jl` script gives an example of how to call your method implemetations to read the reaction files, and compute the stoichiometric matrix $\mathbf{S}$ associated with the reactions in the [Toy.net](/data/Toy.net) file.
+
+## Task 2: Setup the steady-state species mole balance system matrix $\mathbf{A}$
+__Duration 20 min__: Assume that we have three streams in the system, stream 1, stream 2, and stream 3. All species can be transported in all streams. 
+No reaction occurs in the streams.
+Streams 1 and 2 enter the reactor, and stream 3 exits the reactor. Show that in the abssence of information about the reaction extents, or the input or output stream mole flows, the steady-state species mole balances can be written as:
+
+$$
+\begin{equation}
+\mathbf{A}\cdot\mathbf{x} = \mathbf{0}
+\end{equation}
+$$
+
+where $\mathbf{A}\in\mathbb{R}^{\mathcal{7}\times\mathcal{24}}$ is the system matrix, and $\mathbf{x}\in\mathbb{R}^{\mathcal{24}\times{1}}$ is the vector of unknowns. To see this, run the `runme_task_2.jl` script to setup the system matrix $\mathbf{A}$ as the block system:
+
+$$
+\begin{equation}
+\mathbf{A} = \begin{bmatrix}
+\mathbf{S} &|& \mathbf{D}_{1} &|& \mathbf{D}_{2} &|& \mathbf{D}_{3} \\
+\end{bmatrix}
+\end{equation}
+$$
+
+where $\mathbf{S}$ is the stoichiometric matrix, and $\mathbf{D}_{1}$, $\mathbf{D}_{2}$, and $\mathbf{D}_{3}$ are diagonal matrices that represent the stream direction vectors for streams 1, 2, and 3, respectively.
+
+### Dicussion
+* What are the unknowns in the `24`$\times$`1` unknown vector $\mathbf{x}$?
+* What is the `rank` of the system matrix $\mathbf{A}$, what does that say about the system of equations? 
+
+## Task 3 (preview of problem set 3): Let's put some numbers in and see what happens.
+__Duration 10 min__: Assume that we have three streams in the system, stream 1, stream 2, and stream 3. All species can be transported in all streams.
+Further, we've measured some of the stream mole flows, and want to compute the remaing unknown values (extents and missing mole flows). How do we setup the system matrix $\mathbf{A}$, the vector of unknowns $\mathbf{x}$ and the right-hand side vector $\mathbf{b}$? We've implemented some scenarios in the the `runme_task_3.jl` script.
+* _Case 1_: Assume we've measure all the inputs, and want to estimate the reaction extents and the outputs. How do we setup the system matrix $\mathbf{A}$, the vector of unknowns $\mathbf{x}$ and the right-hand side vector $\mathbf{b}$? (and will the system be solvable?)
+* _Case 2_: Assume we've measure all the outputs and some of the ouput streams. How do we setup the system matrix $\mathbf{A}$, the vector of unknowns $\mathbf{x}$ and the right-hand side vector $\mathbf{b}$? (and will the system be solvable?). 
+    * Put some numbers into the measurement vector `ndot_measured` vector,  and see if the system is solvable using one of our favorite linear algebra solvers.
