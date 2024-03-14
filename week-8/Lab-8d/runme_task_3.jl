@@ -2,7 +2,7 @@
 include("runme_task_1.jl");
 
 # base frame -
-(number_of_rows, number_of_columns) = size(growth_matrix);
+(number_of_rows, number_of_columns) = size(market_matrix);
 M = zeros(number_of_rows, number_of_columns);
 my_frame_cutoff = 250;
 
