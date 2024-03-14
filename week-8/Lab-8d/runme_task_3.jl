@@ -4,10 +4,9 @@ include("runme_task_1.jl");
 # base frame -
 (number_of_rows, number_of_columns) = size(market_matrix);
 M = zeros(number_of_rows, number_of_columns);
-my_frame_cutoff = 250;
 
 # let's visualize the SVD of the growth matrix -
-my_frame_cutoff = # TODO: replace this with the number of frames you want to generate;
+my_frame_cutoff = 250; # replace this with the number of frames you want to generate;
 iter = ProgressBar(1:my_frame_cutoff);
 for i ∈ iter
 
