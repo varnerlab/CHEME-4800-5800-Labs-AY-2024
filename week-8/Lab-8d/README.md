@@ -18,10 +18,10 @@ __Duration 5 minutes__: Run the `runme_task_2.jl` to compute the cumulative cont
 * This script will generate a plot of each mode's cumulative contribution. Guestimate the modes needed to capture 80% of the market matrix.
 
 ## Task 3: Generate the SVD frames of the market matrix
-__Duration 10 minuntes__: Enter the approximte number of modes required to capture 80% of the `market_matrix` in the `my_frame_cutoff ` variable. Run the `runme_task_3.jl` to generate the SVD frames of the market matrix. This script will create a plot of the cumulative contribution of each mode and will save an image of the SVD `market_matrix` frames to the `frames` directory. 
+__Duration 10 minutes__: Enter the approximate modes required to capture 80% of the `market_matrix` in the `my_frame_cutoff ` variable. Run the `runme_task_3.jl` to generate the SVD frames of the market matrix. This script will create a plot of the cumulative contribution of each mode and will save an image of the SVD `market_matrix` frames to the `frames` directory. 
 
 Colors:
 * White: down days
 * Black: up days
-* Gray: some days in between
+* Gray: in between
 
