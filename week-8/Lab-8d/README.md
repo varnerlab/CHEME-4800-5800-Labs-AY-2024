@@ -10,7 +10,7 @@ $$
 
 where $P_j$ is the price of the asset at time $j$ and $\Delta{t}$ is the time difference between $j$ and $j-1$ (in this case `1-trading-day` or 1/252 years). We saved the daily returns in a matrix `market_matrix` where each row is a different asset, and each column is a different day. We then computed the SVD of the `market_matrix` and saved the results in the `U,` `S,` and `V` matrices.
 
-* __Duration 30 minutes__: Complete the implementation of the `testme_task_1.jl` script that tests facts about singular value decomposition that we discussed in lecture `L8c`. When you have implemented the tests, run the `testme_task_1.jl` script to verify your implementation.
+* __Duration 30 minutes__: Complete the implementation of the `testme_task_1.jl` script that tests facts about singular value decomposition that we discussed in lecture `L8c`. When you have implemented the tests, run the `testme_task_1.jl` script to verify your implementation. The solution to this task can be found in the `solutions` directory. 
 
 ## Task 2: Singular Value Decomposition of Financial Data
 __Duration 5 minutes__: Run the `runme_task_2.jl` to compute the cumulative contribution of each mode to the overall 
