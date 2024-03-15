@@ -27,8 +27,7 @@ __Duration 20 min__: Use your `Lab 7d` implementation to compute the stoichiomet
 * The `runme_task_1.jl` script gives an example of how to call your method implementations to read the reaction files and compute the stoichiometric matrix $\mathbf{S}$ associated with the reactions in the [Toy.net](/data/Toy.net) file.
 
 ## Task 2: Setup the steady-state species mole balance system matrix $\mathbf{A}$
-__Duration 20 min__: Assume that we have three streams in the system: stream 1, stream 2, and stream 3. All species can be transported in all streams. 
-No reaction occurs in the streams.
+__Duration 20 min__: Assume that we have three streams in the system: stream 1, stream 2, and stream 3. All species can be transported in all streams. No reaction occurs in the streams.
 Streams 1 and 2 enter the reactor, and stream three exits the reactor. Show that in the absence of information about the reaction extents or the input or output stream mole flows, the steady-state species mole balances can be written as:
 
 $$
