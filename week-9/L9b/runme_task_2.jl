@@ -1,7 +1,10 @@
 include("runme_task_1.jl"); # this will run the first task, and generate the data
 
 # TODO: set the activator to 0.0, and set the initial conditions to the last setup, and update the time_span
-throw(ArgumentError("You need to finish the implementation of the runme_task_2.jl script!"));
+# throw(ArgumentError("You need to finish the implementation of the runme_task_2.jl script!"));
+parameters["activator"] = 0.0;
+ic = X[end,:];
+time_span = (T[end]+dt, 720.0, 0.1);
 
 # build a new model -
 model_washout = build(MySimpleProblemModel, (

@@ -8,7 +8,17 @@ function _solve(problem::MySimpleProblemModel, solver::MyForwardEulerMethod)::Tu
     X = Array{Float64,2}(undef, length(time_array), length(initial_conditions));
 
     # main loop -
-    throw(ArgumentError("You need to finish the implementation of the _solve method!"));
+    # throw(ArgumentError("You need to finish the implementation of the _solve method!"));
+    for i ∈ eachindex(time_array)
+       
+        if (i == 1)
+            for j ∈ eachindex(initial_conditions)
+                X[i,j] = initial_conditions[j];
+            end
+        else
+            X[i,:] = X[i-1,:] + dt*problem.model(X[i-1,:], i-1, problem.parameters);
+        end
+    end
 
     # return the (T,X) tuple -
     return (time_array, X);
