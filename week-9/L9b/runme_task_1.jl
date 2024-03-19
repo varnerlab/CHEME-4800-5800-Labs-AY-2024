@@ -1,10 +1,8 @@
 # include -
 include("Include.jl");
 
-# constants -
-number_of_genes = 3;
-
 # ----- PHASE 1: PARAMETERS AND MODEL SETUP START ------------------------------------------------------------------------------- #
+number_of_genes = 3;
 ic = zeros(number_of_genes); # setup the initial conditions -
 kd = 0.01*ones(number_of_genes); # setup degradation rate constants
 dt = 0.1; # setup the time step
