@@ -4,7 +4,7 @@ The case study that we simulate is a three-gene memory network.
 
 <!-- ![alt text](figs/ThreeGene-Network.png "Title") -->
 <center>
-<img src="figs/ThreeGene-Network.png" width="400" height="200">
+<img src="figs/ThreeGene-Network.png" width="200" height="200">
 </center>
 
 In this network, gene 1 is induced by an external activator. Gene 1 induces the expression of gene 2 and gene 3. 
