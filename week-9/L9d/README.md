@@ -3,7 +3,7 @@ This lab will familiarize students with the solution of the Kompala Cybernetic M
 
 ## Prerequisites
 I've already set up the model equations and the `balances` function, which takes the system state, i.e., concentrations and simulation parameters, and evaluates the right-hand side of the model differential equations. The model can be found in the [Kompala.jl file](src/Kompala.jl). 
-* In this lab, you will write code that interfaces the model equations with the solvers from the [DifferentialEquations.jl](https://diffeq.sciml.ai/stable/) package.
+* In this lab, you will write code that interfaces these model equations with the solvers from the [DifferentialEquations.jl](https://diffeq.sciml.ai/stable/) package. Thus, in our `buy-vs-build` decision, we have chosen to `buy` a differential equation solver.
 
 ## Tasks
 1. __Duration 45 min__: Complete the implementation of the `runme_task_1.jl`, and execute the script. The script will generate use the [DifferentialEquations.jl](https://diffeq.sciml.ai/stable/) package to solve the model equations, producing a time array `T` and a state array `X` holding the model solutions. 
