@@ -1,4 +1,4 @@
-# Lab 9d: Solution of the Kompala Cybernetic Model for the Batch Growth of _Klebsiella oxytoca_ on Sugar Mixtures
+# Lab 9d: Simulation of the Growth of _Klebsiella oxytoca_ on Sugar Mixtures in Batch Cultures
 This lab will familiarize students with the solution of the Kompala Cybernetic Model for the batch growth of _Klebsiella oxytoca_ on sugar mixtures using the [DifferentialEquations.jl](https://diffeq.sciml.ai/stable/) package. The model is described [here](paper/Kompala-BiotechBioengineering-1986.pdf).
 
 # Tasks
