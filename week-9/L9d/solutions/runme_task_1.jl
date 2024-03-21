@@ -31,7 +31,7 @@ xₒ = [
     2.5;            # 2 S₂
     0.90*emax[1];   # 3 E₁
     0.18*emax[2];   # 4 E₂
-    3e-3;           # 5 C
+    4e-3;           # 5 C
 ];
 
 # call the ODE solver -

@@ -1,17 +1,20 @@
 # include -
 include("Include.jl");
 
-# --- PHASE 1 START: setup the parameters for the model ----------------------------------------------------------------- #
-# TODO: setup the parameters for the model for the case in Fig 6 of Kompala et al. 1986. 
-α = nothing; # enzyme synthesis rate constants
-β = nothing; # enzyme degradation rate constants
-K = nothing; # saturation constants for growth on various sugars
-K̂ = nothing; # saturation constants for enzyme synthesis
-μmax = nothing; # maximum specific growth rates
-Y = nothing;    # yield coefficients
-emax = nothing; # maximum enzyme concentrations
+# Simulate Glucose (1) Xylose (2) fermentation, Fig 6 of Kompala et al. 1986
 
-# store the parameters the p-vector
+# setup the parameters for the model -
+α = [1e-3,1e-3];
+β = [0.05,0.05];
+K = [0.01,0.2];
+K̂ = [0.01,0.2];
+μmax = [1.08,0.82];
+Y = [0.52,0.5];
+emax = [
+    α[1]/(μmax[1] + β[1]),
+    α[2]/(μmax[2] + β[2])
+];
+
 p = Array{Any,1}(undef,8)
 p[1] = α
 p[2] = β
@@ -22,34 +25,29 @@ p[6] = Y
 p[7] = emax
 p[8] = 2; # number of enzymes
 
-# TODO: setup the initial conditions for Fig 6 of Kompala et al. 1986
-xₒ = nothing;
-# --- PHASE 1 STOP: setup the parameters for the model ------------------------------------------------------------ #
+# setup the initial conditions -
+xₒ = [
+    0.5;            # 1 S₁
+    2.5;            # 2 S₂
+    0.90*emax[1];   # 3 E₁
+    0.18*emax[2];   # 4 E₂
+    4e-3;           # 5 C
+];
 
-# --- PHASE 2 START: call the ODE solver -------------------------------------------------------------------------- #
-tspan = nothing; # time span for the simulation: Tuple of (start_time, end_time)
+# call the ODE solver -
+tspan = (0.0,10.0);
 prob = ODEProblem(balances, xₒ, tspan, p);
+soln = solve(prob, RK4(), reltol=1e-8, abstol=1e-8);
 
-# TODO: call the ODE solver using the RK4() method
-# see DifferentialEquations.jl documentation for more details, https://diffeq.sciml.ai/stable/
-soln = nothing;
-
-# get the results from the solver -
-T,X = nothing;
-if (soln === nothing)
-    println("Error: call to the ODE solver failed.")
-else
-    # build soln and time arrays -
-    T = soln.t
-    tmp = soln.u
-    number_of_time_steps = length(T)
-    number_of_dynamic_states = length(xₒ)
-    X = Array{Float64,2}(undef, number_of_time_steps,  number_of_dynamic_states);
-    for i ∈ 1:number_of_time_steps
-        soln_vector = tmp[i]
-        for j ∈ 1:number_of_dynamic_states
-            X[i,j] = soln_vector[j]
-        end
+# build soln and time arrays -
+T = soln.t
+tmp = soln.u
+number_of_time_steps = length(T)
+number_of_dynamic_states = length(xₒ)
+X = Array{Float64,2}(undef, number_of_time_steps,  number_of_dynamic_states);
+for i ∈ 1:number_of_time_steps
+    soln_vector = tmp[i]
+    for j ∈ 1:number_of_dynamic_states
+        X[i,j] = soln_vector[j]
     end
 end
-# --- PHASE 2 STOP: call the ODE solver -------------------------------------------------------------------------- #

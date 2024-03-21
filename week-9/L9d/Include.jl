@@ -13,8 +13,8 @@ using UnicodePlots;
 using DifferentialEquations;
 
 # uncomment me if you want to use Plots.jl for optional plotting
-# using Plots;
-# using Colors;
+using Plots;
+using Colors;
 
 # load my codes -
 include(joinpath(_PATH_TO_SRC, "Kompala.jl"));
