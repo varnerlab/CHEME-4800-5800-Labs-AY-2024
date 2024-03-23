@@ -108,12 +108,10 @@ function balances(dx, x, p, t)
     # compute the kinetics
     rE = _compute_enzyme_synthesis_rates(x,p);
     rG = _compute_growth_rates(x,p);
+    (u,v) = _compute_cybernetic_variables(rG, p);  # compute the control (cybernetic variables) -
 
     # compute the dilution term -
-    μ = sum(rG);
-
-    # compute the control (cybernetic variables) -
-    (u,v) = _compute_cybernetic_variables(rG, p);
+    μ = sum(rG.*v);
 
     # setup the right-hand-side (rhs) -
     dx[1] = -(1/Y[1])*rG[1]*v[1]*C;
