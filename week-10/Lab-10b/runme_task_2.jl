@@ -2,7 +2,7 @@
 include("runme_task_1.jl");
 
 # Let's specify a regularization parameter -
-λ = 10.0;
+λ = 1000.0;
 
 # Compute the *expected* θ vector for each firm in our dataset, and store in a dictionary
 # using the θ function using matrix inv calculation directly 

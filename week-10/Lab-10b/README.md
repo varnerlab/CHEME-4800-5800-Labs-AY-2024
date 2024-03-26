@@ -1,4 +1,4 @@
-# Lab 10a: Estimating the Parameters in a Single Index Model (SIM)
+# Lab 10b: Estimating the Parameters in a Single Index Model (SIM)
 A single index model describes the return of a firm’s stock in terms of a firm-specific return and the overall market return. One of the simplest (yet still widely used) single index models was developed by [Sharpe (1963)](https://en.wikipedia.org/wiki/Single-index_model#:~:text=The%20single%2Dindex%20model%20(SIM,used%20in%20the%20finance%20industry.)).
 
 Let $R_{i}(t)\equiv\left(r_{i}\left(t\right) - r_{f}\right)$ 
