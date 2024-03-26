@@ -3,6 +3,7 @@ include("Include.jl")
 
 # initialize -
 dataset = Dict{String,DataFrame}();
+risk_free_rate = 0.05;
 
 # load the price dataset full dataset, remove firms with missing data -
 original_dataset = MyPortfolioDataSet() |> x->x["dataset"];
@@ -18,8 +19,5 @@ my_list_of_tickers = keys(dataset) |> collect |> x->sort(x);
 idx_spy = findfirst(x->x=="SPY", my_list_of_tickers);
 
 # compute the growth rate matrix -
-market_matrix = μ(dataset, my_list_of_tickers) |> x-> transpose(x) |> Matrix;
-rG = market_matrix[:,idx_spy]; # this is the growth rate of the market, which we apoproximate by the SPY ETF
-
-# compute the singular value decomposition -
-(U,Σ,V) = svd(market_matrix);
+market_matrix = μ(dataset, my_list_of_tickers, risk_free_rate = risk_free_rate) |> x-> transpose(x) |> Matrix;
+Rₘ = market_matrix[idx_spy, :]; # this is the growth rate of the market, which we apoproximate by the SPY ETF

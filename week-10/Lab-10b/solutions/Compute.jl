@@ -125,8 +125,15 @@ The `θ` function computes the expected parameters for the single index model.
 """
 function θ(data::Array{Float64,2}, firmindex::Int64, Rₘ::Array{Float64,1}; λ::Float64 = 0.0)::Array{Float64,1}
 
-    # TODO: implement the regulatized least squares solution for the single index model
-    # TODO: this should implement the logic from the L10a lecture notes, using the direct linear algebra approach
-
-    throw(ErrorException("Not yet implemented!"))
+    # formulate the Y and X arrays with the price data -
+    Y = data[firmindex, :];
+    max_length = length(Y);
+    X = [ones(max_length) Rₘ];
+    IM = diagm(ones(2)); # we have two parameters -
+   
+    # compute θ̂ -
+    θ̂ = inv(transpose(X)*X+λ*IM)*transpose(X)*Y
+   
+    # return -
+    return θ̂;
 end
