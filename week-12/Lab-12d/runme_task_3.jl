@@ -34,7 +34,7 @@ for i ∈ eachindex(your_list_of_tickers)
     sim_model = models[ticker];
     α = sim_model.α;
     β = sim_model.β;
-    γ[i] = α/β + ERₘ;
+    γ[i] = max(0.0, α/β + ERₘ);
 end
 
 # compute the last price quote -
@@ -48,11 +48,18 @@ end
 
 # compute the bounds -
 bounds = zeros(length(your_list_of_tickers), 2);
-bounds[:,2] .= 1000.0; # unbounded number of shares
+for i ∈ eachindex(your_list_of_tickers)
+    if (γ[i] == 0.0)
+        bounds[i, 2] = 0.001; # some small value
+    else
+        bounds[i, 2] = 1000.0;
+    end
+end
 
 # build problem -
 # TODO: build the problem model of type MySimulatedAnnealingProblem
 # The problem model should be stored in the variable problem
+
 
 # alias the objective function -
 λ̂ = 100.0;
