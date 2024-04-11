@@ -2,7 +2,7 @@
 include("runme_task_1.jl");
 
 # Let's specify a regularization parameter -
-λ = 1.0;
+δ = 1.0;
 
 # Compute the *expected* θ vector for each firm in our dataset, and store in a dictionary
 # using the θ function using matrix inv calculation directly 
@@ -13,7 +13,7 @@ for ticker ∈ my_list_of_tickers
     ticker_index = findfirst(x->x==ticker, my_list_of_tickers);
 
     # compute the expected θ vector for firm i
-    θᵢ = θ(market_matrix, ticker_index, Rₘ, λ = λ);
+    θᵢ = θ(market_matrix, ticker_index, Rₘ, λ = δ);
 
     # store MySingleIndexModel object in dictionary
     parameters_dictionary[ticker] = build(MySingleIndexModel, (
