@@ -6,7 +6,7 @@ include("runme_task_1.jl");
 
 # Compute the *expected* θ vector for each firm in our dataset, and store in a dictionary
 # using the θ function using matrix inv calculation directly 
-parameters_matrix = Dict{String, MySingleIndexModel}();
+parameters_dictionary = Dict{String, MySingleIndexModel}();
 for ticker ∈ my_list_of_tickers
 
     # what index is this ticker?
@@ -16,10 +16,14 @@ for ticker ∈ my_list_of_tickers
     θᵢ = θ(market_matrix, ticker_index, Rₘ, λ = λ);
 
     # store MySingleIndexModel object in dictionary
-    parameters_matrix[ticker] = build(MySingleIndexModel, (
+    parameters_dictionary[ticker] = build(MySingleIndexModel, (
         α = θᵢ[1],
         β = θᵢ[2],
         r = risk_free_rate, # risk-free rate
         ϵ = errormodel(market_matrix, ticker_index, θᵢ, Rₘ)
     ));
 end
+
+# dump the file to disk -
+save(joinpath(_PATH_TO_MY_SIMS, "SIMs-Lab-12d.jld2"), Dict("sims" => parameters_dictionary, 
+    "market" => mean(Rₘ), "lastprice" => price));
