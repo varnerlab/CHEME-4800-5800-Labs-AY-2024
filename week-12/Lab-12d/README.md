@@ -21,7 +21,7 @@ where $\mathbb{E}(R_{i})$ is the __expected excess return__ of stock $i$, and $\
 
 ## Tasks
 1. __Duration 15 min__: Read the [Simulated Annealing online notes](https://varnerlab.github.io/CHEME-4800-5800-ComputingBook/unit-3-learning/combitorial.html#simulated-annealing) and familiarize yourself with the general idea of the approach.
-1. __Duration 15 min__: Finish the implementation of the `runme_task_2.jl` script that computes the [single index model](https://en.wikipedia.org/wiki/Single-index_model) for each stock in the [SP500](https://en.wikipedia.org/wiki/S&P_500) index. See `Lab 10b`. The solution for this task is provided in the `solutions` folder.
+1. __Duration 15 min__: Finish the implementation of the `runme_task_2.jl` script (assuming a regularization parameter $\delta$ = 1) that computes the [single index model](https://en.wikipedia.org/wiki/Single-index_model) for each stock in the [SP500](https://en.wikipedia.org/wiki/S&P_500) index. See `Lab 10b`. The solution for this task is provided in the `solutions` folder.
 2. __Duration 10 min__: In the `runme_task_3.jl` script, construct a `MySimulatedAnnealingProblem` instance with `number_of_iterations = 100`,
 `number_of_iterations_per_T = 100`, `α = 0.999` and `bounds = bounds`.
 3. __Duration 10 min__: Execute the `testme_task_3.jl` script. Do you get the expected output, i.e., pass the tests?
