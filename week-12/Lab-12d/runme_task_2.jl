@@ -11,6 +11,22 @@ parameters_dictionary = Dict{String, MySingleIndexModel}();
 # TODO: estimate the (α, β) parameters for each firm in the dataset (my_list_of_tickers)
 # The parameters for each firm should be stored in an MySingleIndexModel object
 # The MySingleIndexModel instances should be stored in the parameters_dictionary dictionary, where the key is the ticker
+for ticker ∈ my_list_of_tickers
+
+    # what index is this ticker?
+    ticker_index = findfirst(x->x==ticker, my_list_of_tickers);
+
+    # compute the expected θ vector for firm i
+    θᵢ = θ(market_matrix, ticker_index, Rₘ, λ = δ);
+
+    # store MySingleIndexModel object in dictionary
+    parameters_dictionary[ticker] = build(MySingleIndexModel, (
+        α = θᵢ[1],
+        β = θᵢ[2],
+        r = risk_free_rate, # risk-free rate
+        ϵ = errormodel(market_matrix, ticker_index, θᵢ, Rₘ)
+    ));
+end
 
 # dump the file to disk -
 save(joinpath(_PATH_TO_MY_SIMS, "SIMs-Lab-12d.jld2"), Dict("sims" => parameters_dictionary, 

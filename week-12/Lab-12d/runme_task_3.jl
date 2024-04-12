@@ -59,10 +59,15 @@ end
 # build problem -
 # TODO: build the problem model of type MySimulatedAnnealingProblem
 # The problem model should be stored in the variable problem
-
+problem = build(MySimulatedAnnealingProblem, (
+    number_of_iterations = 200,
+    number_of_iterations_per_T = 100,
+    α = 0.999,
+    bounds = bounds
+));
 
 # alias the objective function -
-λ̂ = 100.0;
+λ̂ = 1000000.0;
 objfunc = x-> _objfunc(x, γ, Sₒ, total_budget, λ = λ̂);
 
 # solve the problem -
