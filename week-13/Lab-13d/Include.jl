@@ -14,6 +14,10 @@ using Distributions;
 using DataFrames;
 using JLD2;
 using FileIO;
+using Plots;
+using Colors;
+using StatsPlots;
+using HypothesisTests;
 
 # include my codes -
 include(joinpath(_PATH_TO_SRC, "Types.jl"));
