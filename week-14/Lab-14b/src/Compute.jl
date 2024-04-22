@@ -7,14 +7,14 @@ function lookahead(p::MyMDPProblemModel, U::Vector{Float64}, s::Int64, a::Int64)
     𝒮 = p.𝒮;
     
     # setup my state array -
-    return R[s,a] + γ*sum(T[s,s′,a]*U[i] for (i,s′) in enumerate(𝒮))
+    return R[s,a] + γ*sum(T[s′,s,a]*U[i] for (i,s′) in enumerate(𝒮))
 end
 
 function lookahead(p::MyMDPProblemModel, U::Function, s::Int64, a::Int64)
 
     # get data from the problem -
     𝒮, T, R, γ = p.𝒮, p.T, p.R, p.γ;
-    return R[s,a] + γ*sum(T[s,s′,a]*U(s′) for s′ in 𝒮)
+    return R[s,a] + γ*sum(T[s′,s,a]*U(s′) for s′ in 𝒮)
 end
 
 
@@ -94,7 +94,7 @@ function Q(p::MyMDPProblemModel, U::Array{Float64,1})::Array{Float64,2}
 
     for s ∈ 1:length(𝒮)
         for a ∈ 1:length(𝒜)
-            Q_array[s,a] = R[s,a] + γ*sum([T[s,s′,a]*U[s′] for s′ in 𝒮]);
+            Q_array[s,a] = R[s,a] + γ*sum([T[s′,s,a]*U[s′] for s′ in 𝒮]);
         end
     end
 
